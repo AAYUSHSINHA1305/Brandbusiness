@@ -1,0 +1,892 @@
+import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+class Homepage extends StatefulWidget {
+  const Homepage({Key? key}) : super(key: key);
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  bool businessconsuliting = false;
+  bool businessanalytics = false;
+  bool marketingresarch = false;
+  bool brandingsupport = false;
+  bool mediamarketing = false;
+  int activeIndex = 0;
+  final urlImages = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0YPNvDPMgqcsDb48GCzTudWD3v_K0hP_Ok09gr7W&s",
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
+    "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
+  ];
+  @override
+  Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.height;
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      CarouselSlider.builder(
+                        options: CarouselOptions(
+                            height: 300,
+                            aspectRatio: 25 / 5,
+
+                            // viewportFraction: 1,
+                            // autoPlay: true,
+                            // pageSnapping: false,
+                            // enableInfiniteScroll: false,
+                            // enlargeCenterPage: true,
+
+                            enlargeStrategy: CenterPageEnlargeStrategy.height,
+                            // reverse: true,
+                            autoPlayInterval: const Duration(seconds: 2),
+                            onPageChanged: ((index, reason) => setState)),
+                        itemCount: urlImages.length,
+                        itemBuilder: ((context, index, realIndex) {
+                          final urlImage = urlImages[index];
+                          return buildImage(urlImage, index);
+                        }),
+                      ),
+                      Image.asset("assets/logo.png"),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.settings,
+                          color: Color.fromARGB(255, 3, 7, 29),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Text(
+                          "Featured Services",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 3, 7, 29),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "We Provide Additional Services That will Grow Your Business",
+                    style: TextStyle(fontSize: 30, color: Colors.indigo),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "Custom Application Develoment,MicroShoft Dynamics NVA,App Maintenance & Support, Taxi Booking App,Technologies ,React,Nativ Development,Nativiv App Development, Hybrd App Development,Blockchine App Development,Laraval App Development,PHP Web Develoment,Application Migration,UI & UX Design,Staff Augmentation, Enterprise Solution  Microshoft Dynamics CRM, Microsoft Dynamic 365 BC, SharePoint & 0365, Food Delivery App Fantasy Sports App, Music Streaming App, WoodPress Develoment, Paython Develoment,ASP.NET Develoment iPhone, App Develoment.",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 131, 136, 139),
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset("assets/image1.webp"),
+                        const Text(
+                          "Web Design & Development",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w900,
+                            color: Color.fromARGB(255, 17, 51, 78),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text(
+                          "You Can trust our experts for desigining and development an user friendly website for your company.",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 131, 136, 139),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset("assets/image.webp"),
+                        const Text(
+                          "Web Application Development",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w900,
+                            color: Color.fromARGB(255, 17, 51, 78),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text(
+                          "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React.",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 131, 136, 139),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle,
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset("assets/image.webp"),
+                        const Text(
+                          "Digital Marketing",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w900,
+                            color: Color.fromARGB(255, 17, 51, 78),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text(
+                          "We can easily help you in promoting your brand and getting connected with your targeted customers.",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 131, 136, 139),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.add_circle_outline,
+                      size: 50,
+                    ),
+                    color: Colors.blue,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MaterialButton(
+                        elevation: 2,
+                        color: const Color.fromARGB(179, 240, 234, 234),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        onPressed: () {},
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.person,
+                              color: Colors.blue,
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              "About Company",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "We Solve Better Digital Marketing Solution",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(255, 8, 27, 43),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "High standard of solution at the best price in the industry you will get by working with us",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                      color: Color.fromARGB(255, 131, 136, 139),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Image.network(
+                        "https://media.istockphoto.com/photos/red-number-one-sitting-on-white-background-picture-id1310405790?b=1&k=20&m=1310405790&s=170667a&w=0&h=wfZ5ydyNIc2nwx_FzGfAjC-l6dTv0GjH986QrGe9ujg=",
+                        height: 25,
+                        width: 20,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        "A great value for your business",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Image.network(
+                        "https://media.istockphoto.com/photos/two-number-red-3d-numerals-sign-picture-id1366741820?b=1&k=20&m=1366741820&s=170667a&w=0&h=_p-W9VrPZXtYmxnar_myi9ljRdzJIMp5-uN7LV3073A=",
+                        height: 22,
+                        width: 20,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        "Achieve online success",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Image.network(
+                        "https://image.shutterstock.com/image-illustration/number-3-260nw-64362010.jpg",
+                        height: 22,
+                        width: 20,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        "Transform your indeas",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Image.network(
+                    "https://image.shutterstock.com/image-vector/modern-flat-design-isometric-concept-600w-1181806747.jpg",
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MaterialButton(
+                        elevation: 2,
+                        color: const Color.fromARGB(179, 240, 234, 234),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        onPressed: () {},
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.settings,
+                              color: Color.fromARGB(255, 49, 86, 117),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Text(
+                              "Our Mission",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "We Offer Complete Range of Features",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Color.fromARGB(255, 28, 73, 110),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  const Text(
+                    "At Web Maniacs, we excel in offering a wide range of industry-standard services, which are required to take businesses to the next level.",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 131, 136, 139),
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  ExpansionTile(
+                    title: const Text("Business Consulting"),
+                    children: [
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      Image.network(
+                        "https://image.shutterstock.com/image-photo/portrait-investment-advisor-businesswoman-sitting-600w-428774194.jpg",
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Business Consulting",
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 18, 65, 104),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "The team of Web Maniacs helps to provide complete web consultation services to every approaching client. Our industry-standard consulting services comprise of website development, application development, graphic designing, e-commerce platforms customization, offshore social media marketing website development, digital marketing & SEO.",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 131, 136, 139),
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Through Market Research To Retain Prospective Customers",
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 40, 140, 221),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        "Our dynamic team of experts is certified to conduct eventual market research and understand what’s preferred in the current market. We’ve years of experience in related genres and well-versed to generate clients, increase as well as retain several prospective customers, and guide you to attain success at the earliest. And also, we will assure your peace of mind and guaranteed outcome.",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 131, 136, 139),
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: const Text("Business Analytics"),
+                    children: [
+                      Image.network(
+                        "https://webmaniacs.co.nz/wp-content/uploads/2021/03/Business-Analytics.png",
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Business Analytics",
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 40, 140, 221),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "At Web Maniacs, you can meet your specific information required and make a smart choice with our world-class services to visualize and shared information collected across multiple sources. The team of Web Maniacs helps to facilitate data-driven decision-making with interactive and rich info visualizations, and incorporate information to optimize steps and accelerate performance. From full-time business support to online marketing and generation of clients, with our experts, you can get whatever is required to achieve ultimate success in your company.",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 131, 136, 139),
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Transforming Data Into Insight & Action",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 40, 140, 221),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/check.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                          const Text(
+                            "Human Resource Analytics",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 131, 136, 139),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/check.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                          const Text(
+                            "Marketing Analytics",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 131, 136, 139),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/check.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                          const Text(
+                            "Finance Analytics",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 131, 136, 139),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/check.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                          const Text(
+                            "Sales Analytics",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 131, 136, 139),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/check.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                          const Text(
+                            "Customer Support Analytics",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 131, 136, 139),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            "assets/check.png",
+                            height: 40,
+                            width: 40,
+                          ),
+                          const Text(
+                            "Operations Analytics",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 131, 136, 139),
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          MaterialButton(
+                            elevation: 2,
+                            color: const Color.fromARGB(179, 240, 234, 234),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            onPressed: () {},
+                            child: Row(
+                              children: const [
+                                Icon(
+                                  Icons.settings,
+                                  color: Colors.blue,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 15.0),
+                                  child: Text(
+                                    "Clients Testimonials",
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  ExpansionTile(
+                      title: const Text("Marketing Research"),
+                      children: [
+                        Image.network(
+                          "https://webmaniacs.co.nz/wp-content/uploads/2021/03/Marketing-Research.png",
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const Text(
+                          "Marketing Research",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 40, 140, 221),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const Text(
+                          "Our industry-standard marketing research solutions can meet all your survey needs and possibilities to retain clients. From brand tracking to customer approach and concept evaluation, our certified experts can cover you with widespread marketing research services, which are scale to meet your needs. You can select a package or customize your plans to conduct your industry-specific marketing research.",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 131, 136, 139),
+                            fontSize: 18,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const Text(
+                          "Leading Brands Prefer Our Widespread Marketing Research Support",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 40, 140, 221),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const Text(
+                          "To customize a package of products and services to satisfy your individual needs, including –",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 131, 136, 139),
+                            fontSize: 18,
+                          ),
+                        ),
+                      ]),
+                  ExpansionTile(
+                    title: const Text("Branding Support"),
+                    children: [
+                      Image.network(
+                        "https://webmaniacs.co.nz/wp-content/uploads/2021/03/Branding-Support.png",
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Branding Support",
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 40, 140, 221),
+                        ),
+                      ),
+                      const Text(
+                        "If you want to create your online presence and authentically generate clients, our marketing experts are always ready to offer the best help. Web Maniacs offers a wide range of consulting, coaching, and support of brands that helps to manifest your clients about your world-class solutions. By diving into your core messaging, objectives, and prospective clients, our experts will give you ample options for branding development.",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 131, 136, 139),
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Empowering Your Brands & Business Into The Next Level",
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 40, 140, 221),
+                        ),
+                      ),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: const Text("Media Marketing"),
+                    children: [
+                      Image.asset("assets/Media-Marketing.png"),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Media Marketing",
+                        style: TextStyle(color: Colors.blue, fontSize: 22),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Web Maniacs is well-established as a versatile online marketing agency, which never relies upon mirrors and smoke to attract new customers. Our dynamic team of experts aims at search engine optimization and upgraded marketing skills to attract new clients to your official website. We aren’t a stagnant company, and so explored widespread industries to offer exact solutions to all our clients. The team of Web Maniacs has the experience and experts to create a custom website and incorporate multiple online marketing services to assist all-size companies in any industry.",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 64, 77, 88)),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                      const Text(
+                        "Grow Your Client Base With Our Data-Driven & Targeted Strategies",
+                        style: TextStyle(color: Colors.blue, fontSize: 22),
+                      ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.check_circle_outline,
+                            color: Color.fromARGB(255, 196, 178, 11),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Technical SEO",
+                            style: TextStyle(
+                              fontSize: 22,
+                              color: Color.fromARGB(
+                                255,
+                                64,
+                                77,
+                                88,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.check_circle_outline,
+                            color: Color.fromARGB(255, 196, 178, 11),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Franchise SEO",
+                            style: TextStyle(
+                                fontSize: 22,
+                                color: Color.fromARGB(
+                                  255,
+                                  64,
+                                  77,
+                                  88,
+                                )),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.check_circle_outline,
+                            color: Color.fromARGB(255, 196, 178, 11),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Local SEO",
+                            style: TextStyle(
+                                fontSize: 22,
+                                color: Color.fromARGB(
+                                  255,
+                                  64,
+                                  77,
+                                  88,
+                                )),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.check_circle_outline,
+                            color: Color.fromARGB(255, 196, 178, 11),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Link Building",
+                            style: TextStyle(
+                                fontSize: 22,
+                                color: Color.fromARGB(
+                                  255,
+                                  64,
+                                  77,
+                                  88,
+                                )),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.check_circle_outline,
+                            color: Color.fromARGB(255, 196, 178, 11),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Social Media Marketing",
+                            style: TextStyle(
+                                fontSize: 22,
+                                color: Color.fromARGB(
+                                  255,
+                                  64,
+                                  77,
+                                  88,
+                                )),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.check_circle_outline,
+                            color: Color.fromARGB(255, 196, 178, 11),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            "Custom Website Design & Development",
+                            style: TextStyle(
+                                fontSize: 22,
+                                color: Color.fromARGB(
+                                  255,
+                                  64,
+                                  77,
+                                  88,
+                                )),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  // Container(
+                  //   height: 25,
+                  //   width: 35,
+                  //   child: Row(
+                  //     children: [
+                  //       Icon(
+                  //         Icons.settings,
+                  //         color: Colors.blue,
+                  //       ),
+                  //       SizedBox(
+                  //         width: 15,
+                  //       ),
+                  //       Text("")
+                  //     ],
+                  //   ),
+                  // ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildImage(String urlImage, int index) => Container(
+        // margin: const EdgeInsets.symmetric(horizontal: 4),
+        color: Colors.grey,
+        child: Image.network(
+          urlImage,
+          fit: BoxFit.cover,
+        ),
+      );
+}
