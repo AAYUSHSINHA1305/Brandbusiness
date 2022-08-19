@@ -15,13 +15,8 @@ class _HomepageState extends State<Homepage> {
   bool brandingsupport = false;
   bool mediamarketing = false;
   int activeIndex = 0;
-  final urlImages = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0YPNvDPMgqcsDb48GCzTudWD3v_K0hP_Ok09gr7W&s",
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-    "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
-  ];
-  final SliderTextList = [
+
+  final sliderTextList = [
     const Text(
       "Offering tailor made solutions is what you can rely on the highly skilled team of this company. Great and professional attitude and they even completed the project on time.",
       style: TextStyle(
@@ -116,38 +111,45 @@ class _HomepageState extends State<Homepage> {
 
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.height;
+    Size size = MediaQuery.of(context).size;
+    final urlImages = <Widget>[
+      Image.network(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0YPNvDPMgqcsDb48GCzTudWD3v_K0hP_Ok09gr7W&s',
+        width: size.width,
+        fit: BoxFit.fill,
+      ),
+      Image.network(
+        'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+        width: size.width,
+        fit: BoxFit.fill,
+      ),
+      Image.network(
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
+        width: size.width,
+        fit: BoxFit.fill,
+      ),
+      Image.network(
+        'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg',
+        width: size.width,
+        fit: BoxFit.fill,
+      ),
+    ];
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Stack(
                       children: [
-                        CarouselSlider.builder(
+                        CarouselSlider(
+                          items: urlImages,
                           options: CarouselOptions(
-                              height: 300,
-                              aspectRatio: 25 / 5,
-
-                              // viewportFraction: 1,
-                              // autoPlay: true,
-                              // pageSnapping: false,
-                              // enableInfiniteScroll: false,
-                              // enlargeCenterPage: true,
-
-                              enlargeStrategy: CenterPageEnlargeStrategy.height,
-                              // reverse: true,
-                              autoPlayInterval: const Duration(seconds: 2),
-                              onPageChanged: ((index, reason) => setState)),
-                          itemCount: urlImages.length,
-                          itemBuilder: ((context, index, realIndex) {
-                            final urlImage = urlImages[index];
-                            return buildImage(urlImage, index);
-                          }),
+                              autoPlay: true, viewportFraction: 1),
                         ),
                         Image.asset("assets/logo.png"),
                       ],
@@ -186,83 +188,93 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
-                      "We Provide Additional Services That will Grow Your Business",
-                      style: TextStyle(fontSize: 30, color: Colors.indigo),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      "Custom Application Develoment,MicroShoft Dynamics NVA,App Maintenance & Support, Taxi Booking App,Technologies ,React,Nativ Development,Nativiv App Development, Hybrd App Development,Blockchine App Development,Laraval App Development,PHP Web Develoment,Application Migration,UI & UX Design,Staff Augmentation, Enterprise Solution  Microshoft Dynamics CRM, Microsoft Dynamic 365 BC, SharePoint & 0365, Food Delivery App Fantasy Sports App, Music Streaming App, WoodPress Develoment, Paython Develoment,ASP.NET Develoment iPhone, App Develoment.",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 131, 136, 139),
-                        fontSize: 16,
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        "We Provide Additional Services That will Grow Your Business",
+                        style: TextStyle(fontSize: 30, color: Colors.indigo),
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        "Custom Application Develoment,MicroShoft Dynamics NVA,App Maintenance & Support, Taxi Booking App,Technologies ,React,Nativ Development,Nativiv App Development, Hybrd App Development,Blockchine App Development,Laraval App Development,PHP Web Develoment,Application Migration,UI & UX Design,Staff Augmentation, Enterprise Solution  Microshoft Dynamics CRM, Microsoft Dynamic 365 BC, SharePoint & 0365, Food Delivery App Fantasy Sports App, Music Streaming App, WoodPress Develoment, Paython Develoment,ASP.NET Develoment iPhone, App Develoment.",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 131, 136, 139),
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Container(
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
                       ),
-                      child: Column(
-                        children: [
-                          Image.asset("assets/image1.webp"),
-                          const Text(
-                            "Web Design & Development",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w900,
-                              color: Color.fromARGB(255, 17, 51, 78),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Column(
+                          children: [
+                            Image.asset("assets/image1.webp"),
+                            const Text(
+                              "Web Design & Development",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w900,
+                                color: Color.fromARGB(255, 17, 51, 78),
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const Text(
-                            "You Can trust our experts for desigining and development an user friendly website for your company.",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 131, 136, 139),
-                              fontWeight: FontWeight.w500,
+                            const SizedBox(
+                              height: 20,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              "You Can trust our experts for desigining and development an user friendly website for your company.",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 131, 136, 139),
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
                       decoration: const BoxDecoration(
                         shape: BoxShape.rectangle,
                       ),
-                      child: Column(
-                        children: [
-                          Image.asset("assets/image.webp"),
-                          const Text(
-                            "Web Application Development",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w900,
-                              color: Color.fromARGB(255, 17, 51, 78),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Column(
+                          children: [
+                            Image.asset("assets/image.webp"),
+                            const Text(
+                              "Web Application Development",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w900,
+                                color: Color.fromARGB(255, 17, 51, 78),
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const Text(
-                            "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React.",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 131, 136, 139),
-                              fontWeight: FontWeight.w500,
+                            const SizedBox(
+                              height: 20,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React.",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 131, 136, 139),
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.rectangle,
-                      ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Column(
                         children: [
                           Image.asset("assets/image.webp"),
@@ -673,39 +685,24 @@ class _HomepageState extends State<Homepage> {
                             ),
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            MaterialButton(
-                              elevation: 2,
-                              color: const Color.fromARGB(179, 240, 234, 234),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              onPressed: () {},
-                              child: Row(
-                                children: const [
-                                  Icon(
-                                    Icons.settings,
-                                    color: Colors.blue,
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 15.0),
-                                    child: Text(
-                                      "Clients Testimonials",
-                                      style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                        Container(
+                          height: size.height * 0.05,
+                          width: size.width * 0.5,
+                          decoration: BoxDecoration(
+                            boxShadow: const [BoxShadow(blurRadius: 3)],
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.settings,
+                                color: Color.fromARGB(255, 1, 40, 71),
                               ),
-                            ),
-                          ],
+                              Text("Client Testimonials")
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -1029,7 +1026,7 @@ class _HomepageState extends State<Homepage> {
                           height: 80,
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Color.fromARGB(255, 231, 223, 223),
+                                color: const Color.fromARGB(255, 231, 223, 223),
                                 width: 5.0,
                                 style: BorderStyle.solid),
                             borderRadius: BorderRadius.circular(20),
@@ -1072,7 +1069,7 @@ class _HomepageState extends State<Homepage> {
                           height: 80,
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Color.fromARGB(255, 231, 223, 223),
+                                color: const Color.fromARGB(255, 231, 223, 223),
                                 width: 5.0,
                                 style: BorderStyle.solid),
                             borderRadius: BorderRadius.circular(20),
@@ -1115,7 +1112,7 @@ class _HomepageState extends State<Homepage> {
                           height: 80,
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Color.fromARGB(255, 231, 223, 223),
+                                color: const Color.fromARGB(255, 231, 223, 223),
                                 width: 5.0,
                                 style: BorderStyle.solid),
                             borderRadius: BorderRadius.circular(20),
@@ -1158,7 +1155,7 @@ class _HomepageState extends State<Homepage> {
                           height: 80,
                           decoration: BoxDecoration(
                             border: Border.all(
-                                color: Color.fromARGB(255, 231, 223, 223),
+                                color: const Color.fromARGB(255, 231, 223, 223),
                                 width: 5.0,
                                 style: BorderStyle.solid),
                             borderRadius: BorderRadius.circular(20),
@@ -1450,7 +1447,7 @@ class _HomepageState extends State<Homepage> {
                       height: 25,
                     ),
                     CarouselSlider(
-                      items: SliderTextList,
+                      items: sliderTextList,
                       options: CarouselOptions(
                         height: 400,
                         aspectRatio: 25 / 5,
@@ -1464,13 +1461,4 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }
-
-  Widget buildImage(String urlImage, int index) => Container(
-        // margin: const EdgeInsets.symmetric(horizontal: 4),
-        color: Colors.grey,
-        child: Image.network(
-          urlImage,
-          fit: BoxFit.cover,
-        ),
-      );
 }
