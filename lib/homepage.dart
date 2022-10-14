@@ -1,5 +1,7 @@
+import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -17,134 +19,170 @@ class _HomepageState extends State<Homepage> {
   int activeIndex = 0;
 
   final sliderTextList = [
-    Column(
-      children: const [
-        Text(
-          "Offering tailor made solutions is what you can rely on the highly skilled team of this company. Great and professional attitude and they even completed the project on time.",
-          style: TextStyle(
-            fontSize: 18,
+    Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: const [
+          Text(
+            "Offering tailor made solutions is what you can rely on the highly skilled team of this company. Great and professional attitude and they even completed the project on time.",
+            style: TextStyle(
+              fontSize: 18,
+              height: 2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Text(
-          "Rochaile",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          SizedBox(
+            height: 25,
           ),
-        ),
-      ],
+          Text(
+            "Rochaile",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     ),
-    Column(
-      children: const [
-        Text(
-          "Wanted to get a user friendly website and I proud to say that the team of Web Maniacs helped me in getting that.",
-          style: TextStyle(
-            fontSize: 18,
+    Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: const [
+          Text(
+            "Wanted to get a user friendly website and I proud to say that the team of Web Maniacs helped me in getting that.",
+            style: TextStyle(
+              fontSize: 18,
+              height: 2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Text(
-          "Andy",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          SizedBox(
+            height: 25,
           ),
-        ),
-      ],
+          Text(
+            "Andy",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     ),
-    Column(
-      children: const [
-        Text(
-          "would like to thank the team of web manaics for developing my company's website and helping me to rank on the top page of google.",
-          style: TextStyle(
-            fontSize: 18,
+    Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: const [
+          Text(
+            "would like to thank the team of web manaics for developing my company's website and helping me to rank on the top page of google.",
+            style: TextStyle(
+              fontSize: 18,
+              height: 2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Text(
-          "Micheal",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          SizedBox(
+            height: 25,
           ),
-        ),
-      ],
+          Text(
+            "Micheal",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     ),
-    Column(
-      children: const [
-        Text(
-          "Great work and professional attitude. Got quality web application development service from the experts of this company.",
-          style: TextStyle(
-            fontSize: 18,
+    Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: const [
+          Text(
+            "Great work and professional attitude. Got quality web application development service from the experts of this company.",
+            style: TextStyle(
+              fontSize: 18,
+              height: 2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Text(
-          "Suzi",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          SizedBox(
+            height: 25,
           ),
-        ),
-      ],
+          Text(
+            "Suzi",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     ),
-    Column(
-      children: const [
-        Text(
-          "Happy to be connected with the team of web maniacs. I was impressed by their service. Thanks for helping my company to rank on the top page of google.",
-          style: TextStyle(
-            fontSize: 18,
+    Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: const [
+          Text(
+            "Happy to be connected with the team of web maniacs. I was impressed by their service. Thanks for helping my company to rank on the top page of google.",
+            style: TextStyle(
+              fontSize: 18,
+              height: 2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Text(
-          "Zidam",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          SizedBox(
+            height: 25,
           ),
-        ),
-      ],
+          Text(
+            "Zidam",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     ),
     SizedBox(
       height: 25,
     ),
-    Column(
-      children: const [
-        Text(
-          "I'm extremely satisfied with professional website development services of the team of Web Maniacs. Looking forward to choose your wide range of digital marketing solution very soon, thanks for your great service!.",
-          style: TextStyle(
-            fontSize: 18,
+    Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Column(
+        children: const [
+          Text(
+            "I'm extremely satisfied with professional website development services of the team of Web Maniacs. Looking forward to choose your wide range of digital marketing solution very soon, thanks for your great service!.",
+            style: TextStyle(
+              fontSize: 18,
+              height: 2,
+            ),
           ),
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Text(
-          "Cyril merry",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          SizedBox(
+            height: 25,
           ),
-        ),
-      ],
+          Text(
+            "Cyril merry",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     ),
     Column(
       children: const [
@@ -152,6 +190,7 @@ class _HomepageState extends State<Homepage> {
           "The dynamic team of Web Maniacs is excellent at offering world-class website design &amp; app development services to small and mid-range companies. Your highly-professional service is always recommended, availed at extremely pocket-saving rates. Thanks Web Maniacs!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -176,6 +215,7 @@ class _HomepageState extends State<Homepage> {
           "The team of Web Maniacs excels in offering wide range of software development help to businesses in New Zealand. My development team was overwhelmed to seek your professional assistance in lead generation. Thanks to their team-work!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -192,9 +232,6 @@ class _HomepageState extends State<Homepage> {
         SizedBox(
           height: 25,
         ),
-        SizedBox(
-          height: 25,
-        ),
       ],
     ),
     Column(
@@ -203,6 +240,7 @@ class _HomepageState extends State<Homepage> {
           "The team of Web Maniacs excels in offering wide range of software development help to businesses in New Zealand. My development team was overwhelmed to seek your professional assistance in lead generation. Thanks to their team-work!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -227,6 +265,7 @@ class _HomepageState extends State<Homepage> {
           "I'm overjoyed with your superb online marketing services, and your marketing experts guided me steps to retain clients and gain popularity in today's digital world. The team of Web Maniacs is extremely professional and offered my company industry-standard solution at affordable charges. Thanks Web Maniacs!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         Text(
@@ -245,6 +284,7 @@ class _HomepageState extends State<Homepage> {
           "I'm highly-satisfied with your professional application development services, offered to my company at extremely pocket-saving charges. Now, I'm looking forward to explore your other services and score a good rank in the search engine. Thanks to the entire team of Web Maniacs for the best help!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -266,6 +306,7 @@ class _HomepageState extends State<Homepage> {
           "The team of Web Maniacs excels in offering customized software design & development help to businesses. From lead generation to digital marketing and wifi marketing, your experts are qualified to offer exact solution at reasonable charges. Thanks Web Maniacs!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -287,6 +328,7 @@ class _HomepageState extends State<Homepage> {
           "The dynamic team of Web Maniacs has helped my small-size company to get a user-oriented website and promote my services in social media profiles. Their highly- professionalism encouraged me to grow as a mid-range company with great client retention potentials. Thanks to Web Maniacs for the help!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -308,6 +350,7 @@ class _HomepageState extends State<Homepage> {
           "From digital marketing to website customization and wifi marketing, the team of Web Maniacs excels in offering wide range of professional support to world-wide companies. I'm highly-impressed with their customer-oriented services and professionalism to work, and also offered me customization at pocket-saving rates. Thanks!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -329,6 +372,7 @@ class _HomepageState extends State<Homepage> {
           "I'm overjoyed to be connected with the talented team of Web Maniacs. Their digital marketing and wifi marketing solution is extremely promising and guided me to attain quick success in company's growth. Thanks Web Maniacs for helping me to get ranked in search engines!",
           style: TextStyle(
             fontSize: 18,
+            height: 2,
           ),
         ),
         SizedBox(
@@ -377,18 +421,52 @@ class _HomepageState extends State<Homepage> {
         body: SingleChildScrollView(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Stack(
+                    alignment: Alignment.bottomCenter,
                     children: [
                       CarouselSlider(
                         items: urlImages,
                         options: CarouselOptions(
-                            autoPlay: true, viewportFraction: 1),
+                          height: size.height * 0.5,
+                          aspectRatio: 16 / 9,
+                          viewportFraction: 1.0,
+                          initialPage: 0,
+                          enableInfiniteScroll: true,
+                          reverse: false,
+                          autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              const Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              activeIndex = index;
+                            });
+                          },
+                          scrollDirection: Axis.horizontal,
+                        ),
                       ),
-                      Image.asset("assets/logo.png"),
+
+                      // add the animated dots indicator heare
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10.0),
+                        child: AnimatedSmoothIndicator(
+                          activeIndex: activeIndex,
+                          count: urlImages.length,
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 275,
+                        left: 20,
+                        child: Image.asset(
+                          "assets/logo.png",
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(
@@ -401,23 +479,54 @@ class _HomepageState extends State<Homepage> {
                         color: Colors.white,
                       ),
                       child: Row(
-                        children: const [
-                          Icon(
-                            Icons.settings,
-                            color: Color.fromARGB(255, 43, 58, 147),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10.0),
-                            child: Text(
-                              "Featured Services",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 43, 58, 147),
+                        children: [
+                          Container(
+                              height: size.height * 0.05,
+                              width: size.width * 0.5,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                                color: Colors.white,
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color.fromARGB(255, 118, 153, 182),
+                                    offset: Offset(
+                                      5.0,
+                                      5.0,
+                                    ),
+                                    blurRadius: 10.0,
+                                    spreadRadius: 1.0,
+                                  ),
+                                ],
                               ),
-                            ),
-                          ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Stack(
+                                      children: const [
+                                        CircleAvatar(
+                                          minRadius: 16.0,
+                                          backgroundColor: blueclor,
+                                          child: Icon(
+                                            Icons.settings,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 7,
+                                    ),
+                                    Text(
+                                      "Featured Services",
+                                      style: TextStyle(
+                                        color: btextcolor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
                         ],
                       ),
                     ),
@@ -429,7 +538,11 @@ class _HomepageState extends State<Homepage> {
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(
                       "We Provide Additional Services That will Grow Your Business",
-                      style: TextStyle(fontSize: 30, color: Colors.indigo),
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: blueclor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -440,7 +553,7 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "Custom Application Develoment,MicroShoft Dynamics NVA,App Maintenance & Support, Taxi Booking App,Technologies ,React,Nativ Development,Nativiv App Development, Hybrd App Development,Blockchine App Development,Laraval App Development,PHP Web Develoment,Application Migration,UI & UX Design,Staff Augmentation, Enterprise Solution  Microshoft Dynamics CRM, Microsoft Dynamic 365 BC, SharePoint & 0365, Food Delivery App Fantasy Sports App, Music Streaming App, WoodPress Develoment, Paython Develoment,ASP.NET Develoment iPhone, App Develoment.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 131, 136, 139),
+                        color: stextcolor,
                         fontSize: 16,
                       ),
                     ),
@@ -448,43 +561,58 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Column(
-                        children: [
-                          Image.asset("assets/ftr1.png"),
-                          const Text(
-                            "Web Design & Development",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w900,
-                              color: Color.fromARGB(255, 17, 51, 78),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: size.height * 0.5,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                        color: cardcolorp,
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(30),
+                          right: Radius.circular(30),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Column(
+                          children: [
+                            Image.asset("assets/ftr1.png"),
+                            const Text(
+                              "Web Application Development",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w900,
+                                color: blueclor,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const Text(
-                            "You Can trust our experts for desigining and development an user friendly website for your company.",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 131, 136, 139),
-                              fontWeight: FontWeight.w500,
+                            SizedBox(
+                              height: 20,
                             ),
-                          ),
-                        ],
+                            Text(
+                              "You Can trust our experts for desigining and development an user friendly website for your company.",
+                              style: TextStyle(
+                                color: stextclor,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: size.height * 0.5,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                        color: cardcolorg,
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(30),
+                          right: Radius.circular(30),
+                        ),
+                      ),
                       child: Column(
                         children: [
                           Image.asset("assets/ftr1.png"),
@@ -499,11 +627,15 @@ class _HomepageState extends State<Homepage> {
                           const SizedBox(
                             height: 20,
                           ),
-                          const Text(
-                            "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React.",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 131, 136, 139),
-                              fontWeight: FontWeight.w500,
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Text(
+                              "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React.",
+                              style: TextStyle(
+                                color: stextclor,
+                                fontSize: 15,
+                              ),
                             ),
                           ),
                         ],
@@ -512,80 +644,134 @@ class _HomepageState extends State<Homepage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Column(
-                      children: [
-                        Image.asset("assets/image.webp"),
-                        const Text(
-                          "Digital Marketing",
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w900,
-                            color: Color.fromARGB(255, 17, 51, 78),
+                    child: Container(
+                      height: size.height * 0.5,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                        color: cardcolorp,
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(30),
+                          right: Radius.circular(30),
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Image.asset("assets/ftr1.png"),
+                          const Text(
+                            "Digital Marketing",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w900,
+                              color: Color.fromARGB(255, 17, 51, 78),
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          "We can easily help you in promoting your brand and getting connected with your targeted customers.",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 131, 136, 139),
-                            fontWeight: FontWeight.w500,
+                          const SizedBox(
+                            height: 20,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 15.0),
+                            child: Text(
+                              "We can easily help you in promoting your brand and getting connected with your targeted customers.",
+                              style: TextStyle(
+                                color: stextclor,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.add_circle_outline,
-                      size: 50,
+                  SizedBox(
+                    height: 30,
+                  ),
+                  //  circle button
+                  Center(
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.add_circle_outline,
+                        size: 50,
+                      ),
+                      color: btextcolor,
+                      onPressed: () {},
                     ),
-                    color: Color.fromARGB(255, 20, 60, 93),
-                    onPressed: () {},
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 25,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 80.0),
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: Container(
                       decoration: const BoxDecoration(
                         color: Colors.white,
                       ),
                       child: Row(
-                        children: const [
-                          Icon(
-                            Icons.person,
-                            color: Color.fromARGB(255, 43, 58, 147),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10.0),
-                            child: Text(
-                              "About Company",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 43, 58, 147),
+                        children: [
+                          Container(
+                            height: size.height * 0.05,
+                            width: size.width * 0.5,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(255, 118, 153, 182),
+                                  offset: Offset(
+                                    5.0,
+                                    5.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Stack(
+                                    children: const [
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    "About Company",
+                                    style: TextStyle(
+                                      color: btextcolor,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 25,
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(
                       "We Solve Better Digital Marketing Solution",
                       style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w900,
-                        color: Color.fromARGB(255, 8, 27, 43),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                        color: blueclor,
                       ),
                     ),
                   ),
@@ -597,9 +783,8 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "High standard of solution at the best price in the industry you will get by working with us",
                       style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                        color: Color.fromARGB(255, 131, 136, 139),
+                        fontSize: 15,
+                        color: stextcolor,
                       ),
                     ),
                   ),
@@ -611,8 +796,15 @@ class _HomepageState extends State<Homepage> {
                     child: Row(
                       children: const [
                         CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 16, 68, 112),
-                          child: Text("1"),
+                          backgroundColor: circleAvcolr,
+                          child: Text(
+                            "1",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           width: 10,
@@ -620,7 +812,7 @@ class _HomepageState extends State<Homepage> {
                         Text(
                           "A great value for your business",
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: circleAvcolr,
                             fontSize: 20,
                           ),
                         ),
@@ -635,8 +827,15 @@ class _HomepageState extends State<Homepage> {
                     child: Row(
                       children: const [
                         CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 16, 68, 112),
-                          child: Text("2"),
+                          backgroundColor: circleAvcolr,
+                          child: Text(
+                            "2",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           width: 10,
@@ -644,7 +843,7 @@ class _HomepageState extends State<Homepage> {
                         Text(
                           "Achieve online success",
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: circleAvcolr,
                             fontSize: 20,
                           ),
                         ),
@@ -659,8 +858,15 @@ class _HomepageState extends State<Homepage> {
                     child: Row(
                       children: const [
                         CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 16, 68, 112),
-                          child: Text("3"),
+                          backgroundColor: circleAvcolr,
+                          child: Text(
+                            "3",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           width: 10,
@@ -668,7 +874,7 @@ class _HomepageState extends State<Homepage> {
                         Text(
                           "Transform your indeas",
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: circleAvcolr,
                             fontSize: 20,
                           ),
                         ),
@@ -694,24 +900,55 @@ class _HomepageState extends State<Homepage> {
                         color: Colors.white,
                       ),
                       child: Row(
-                        children: const [
-                          Icon(
-                            Icons.settings,
-                            color: Color.fromARGB(255, 43, 58, 147),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 10.0),
-                            child: Text(
-                              "Your Mission",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 43, 58, 147),
-                                fontSize: 16,
+                        children: [
+                          Container(
+                            height: size.height * 0.05,
+                            width: size.width * 0.5,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(255, 118, 153, 182),
+                                  offset: Offset(
+                                    5.0,
+                                    5.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Stack(
+                                    children: const [
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.settings,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 7,
+                                  ),
+                                  Text(
+                                    "Your Mission",
+                                    style: TextStyle(
+                                      color: btextcolor,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -724,8 +961,9 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "We Offer Complete Range of Features",
                       style: TextStyle(
-                        fontSize: 22,
-                        color: Color.fromARGB(255, 28, 73, 110),
+                        fontSize: 30,
+                        color: blueclor,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -737,8 +975,9 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "At Web Maniacs, we excel in offering a wide range of industry-standard services, which are required to take businesses to the next level.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 131, 136, 139),
-                        fontSize: 16,
+                        color: stextcolor,
+                        fontSize: 15,
+                        height: 2,
                       ),
                     ),
                   ),
@@ -753,8 +992,8 @@ class _HomepageState extends State<Homepage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Image.network(
-                          "https://image.shutterstock.com/image-photo/portrait-investment-advisor-businesswoman-sitting-600w-428774194.jpg",
+                        child: Image.asset(
+                          "assets/tab-pic.jpg",
                         ),
                       ),
                       const SizedBox(
@@ -765,7 +1004,7 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 18, 65, 104),
+                          color: blueclor,
                         ),
                       ),
                       const SizedBox(
@@ -776,35 +1015,46 @@ class _HomepageState extends State<Homepage> {
                         child: Text(
                           "The team of Web Maniacs helps to provide complete web consultation services to every approaching client. Our industry-standard consulting services comprise of website development, application development, graphic designing, e-commerce platforms customization, offshore social media marketing website development, digital marketing & SEO.",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 131, 136, 139),
+                            color: stextcolor,
                             fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
                       const SizedBox(
                         height: 25,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          "Through Market Research To Retain Prospective Customers",
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 40, 140, 221),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            "assets/tick.jpg",
+                            height: 40,
+                            width: 40,
                           ),
-                        ),
+                          Expanded(
+                            child: Text(
+                              "Through Market Research To Retain Prospective Customers",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                                color: blueclor,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 12.0),
                         child: Text(
                           "Our dynamic team of experts is certified to conduct eventual market research and understand what’s preferred in the current market. We’ve years of experience in related genres and well-versed to generate clients, increase as well as retain several prospective customers, and guide you to attain success at the earliest. And also, we will assure your peace of mind and guaranteed outcome.",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 131, 136, 139),
-                            fontSize: 18,
+                            color: stextcolor,
+                            fontSize: 15,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -819,7 +1069,7 @@ class _HomepageState extends State<Homepage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Image.asset(
-                          "assets/tab-pic.jpg",
+                          "assets/Business-Analytics.png",
                         ),
                       ),
                       const SizedBox(
@@ -830,19 +1080,20 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 40, 140, 221),
+                          color: blueclor,
                         ),
                       ),
                       const SizedBox(
                         height: 25,
                       ),
                       const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 12.0),
                         child: Text(
                           "At Web Maniacs, you can meet your specific information required and make a smart choice with our world-class services to visualize and shared information collected across multiple sources. The team of Web Maniacs helps to facilitate data-driven decision-making with interactive and rich info visualizations, and incorporate information to optimize steps and accelerate performance. From full-time business support to online marketing and generation of clients, with our experts, you can get whatever is required to achieve ultimate success in your company.",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 131, 136, 139),
+                            color: stextcolor,
                             fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -856,7 +1107,7 @@ class _HomepageState extends State<Homepage> {
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 40, 140, 221),
+                            color: blueclor,
                           ),
                         ),
                       ),
@@ -866,7 +1117,7 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/check.png",
+                            "assets/tick.jpg",
                             height: 40,
                             width: 40,
                           ),
@@ -882,7 +1133,7 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/check.png",
+                            "assets/tick.jpg",
                             height: 40,
                             width: 40,
                           ),
@@ -898,7 +1149,7 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/check.png",
+                            "assets/tick.jpg",
                             height: 40,
                             width: 40,
                           ),
@@ -914,7 +1165,7 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/check.png",
+                            "assets/tick.jpg",
                             height: 40,
                             width: 40,
                           ),
@@ -930,7 +1181,7 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/check.png",
+                            "assets/tick.jpg",
                             height: 40,
                             width: 40,
                           ),
@@ -946,7 +1197,7 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         children: [
                           Image.asset(
-                            "assets/check.png",
+                            "assets/tick.jpg",
                             height: 40,
                             width: 40,
                           ),
@@ -967,8 +1218,8 @@ class _HomepageState extends State<Homepage> {
                   ExpansionTile(
                       title: const Text("Marketing Research"),
                       children: [
-                        Image.network(
-                          "https://webmaniacs.co.nz/wp-content/uploads/2021/03/Marketing-Research.png",
+                        Image.asset(
+                          "assets/Marketing-Research.png",
                         ),
                         const SizedBox(
                           height: 25,
@@ -1016,8 +1267,8 @@ class _HomepageState extends State<Homepage> {
                   ExpansionTile(
                     title: const Text("Branding Support"),
                     children: [
-                      Image.network(
-                        "https://webmaniacs.co.nz/wp-content/uploads/2021/03/Branding-Support.png",
+                      Image.asset(
+                        "assets/Branding-Support.png",
                       ),
                       const SizedBox(
                         height: 25,
@@ -1196,15 +1447,17 @@ class _HomepageState extends State<Homepage> {
                           SizedBox(
                             width: 15,
                           ),
-                          Text(
-                            "Custom Website Design & Development",
-                            style: TextStyle(
-                              fontSize: 22,
-                              color: Color.fromARGB(
-                                255,
-                                64,
-                                77,
-                                88,
+                          Expanded(
+                            child: Text(
+                              "Custom Website Design & Development",
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: Color.fromARGB(
+                                  255,
+                                  64,
+                                  77,
+                                  88,
+                                ),
                               ),
                             ),
                           ),
@@ -1215,37 +1468,69 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(
                     height: 25,
                   ),
+
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 80.0),
                     child: Container(
-                      height: size.height * 0.05,
-                      width: size.width * 0.4,
-                      decoration: BoxDecoration(
-                        boxShadow: const [BoxShadow(blurRadius: 3)],
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(
-                            Icons.settings,
-                            color: Color.fromARGB(255, 42, 133, 207),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "Company Skills",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromARGB(255, 42, 133, 207),
+                        children: [
+                          Container(
+                            height: size.height * 0.05,
+                            width: size.width * 0.5,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(255, 118, 153, 182),
+                                  offset: Offset(
+                                    5.0,
+                                    5.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Stack(
+                                    children: const [
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 7,
+                                  ),
+                                  Text(
+                                    "Company Skills",
+                                    style: TextStyle(
+                                      color: btextcolor,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
+
                   const SizedBox(
                     height: 25,
                   ),
@@ -1254,9 +1539,10 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "Inquire About Our Web-Based Digital Marketing Firm",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 6, 29, 48)),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: blueclor,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1267,14 +1553,16 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "Our experienced team members always work closely with the clients to understand their needs. On the basis of their aim and goal we make a plan and apply effective strategies to give them the desired results.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 55, 69, 81),
+                        color: stextclor,
                         fontSize: 16,
+                        height: 1.5,
                       ),
                     ),
                   ),
                   const SizedBox(
                     height: 50,
                   ),
+                  // Get a Quote button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: MaterialButton(
@@ -1284,7 +1572,7 @@ class _HomepageState extends State<Homepage> {
                         "Get a Quote ",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -1304,8 +1592,8 @@ class _HomepageState extends State<Homepage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
-                            child: Image.network(
-                              "https://webmaniacs.co.nz/wp-content/uploads/2021/03/icon-1.png",
+                            child: Image.asset(
+                              "assets/icon-1.png",
                             ),
                           ),
                         ),
@@ -1320,9 +1608,10 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "Latest Technology",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 6, 29, 48)),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: blueclor,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1333,8 +1622,9 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "We always help the start-up companies and assist them to take their business to a new height.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 55, 69, 81),
+                        color: stextclor,
                         fontSize: 16,
+                        height: 1.5,
                       ),
                     ),
                   ),
@@ -1356,8 +1646,8 @@ class _HomepageState extends State<Homepage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
-                            child: Image.network(
-                              "https://webmaniacs.co.nz/wp-content/uploads/2021/03/icon-2.png",
+                            child: Image.asset(
+                              "assets/icon-2.png",
                             ),
                           ),
                         ),
@@ -1372,9 +1662,10 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "High Performance",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 6, 29, 48)),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: blueclor,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1385,8 +1676,9 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "Designing a rich user interface and succeeding the end user experience is what we are specialise for.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 55, 69, 81),
+                        color: stextclor,
                         fontSize: 16,
+                        height: 1.5,
                       ),
                     ),
                   ),
@@ -1408,8 +1700,8 @@ class _HomepageState extends State<Homepage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
-                            child: Image.network(
-                              "https://webmaniacs.co.nz/wp-content/uploads/2021/03/icon-3.png",
+                            child: Image.asset(
+                              "assets/icon-3.png",
                             ),
                           ),
                         ),
@@ -1424,9 +1716,10 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "24x7 Customer Support",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 6, 29, 48)),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: blueclor,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1437,8 +1730,9 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "For any help or assistance you can easily reach to our customer support team 24/7.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 55, 69, 81),
+                        color: stextclor,
                         fontSize: 16,
+                        height: 1.5,
                       ),
                     ),
                   ),
@@ -1460,8 +1754,8 @@ class _HomepageState extends State<Homepage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
-                            child: Image.network(
-                              "https://webmaniacs.co.nz/wp-content/uploads/2021/03/icon-4.png",
+                            child: Image.asset(
+                              "assets/icon-4.png",
                             ),
                           ),
                         ),
@@ -1476,9 +1770,10 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "Dedicated Employees",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 6, 29, 48)),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: blueclor,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1489,7 +1784,7 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "We follow the industry standard practices.",
                       style: TextStyle(
-                        color: Color.fromARGB(255, 55, 69, 81),
+                        color: stextclor,
                         fontSize: 16,
                       ),
                     ),
@@ -1498,30 +1793,60 @@ class _HomepageState extends State<Homepage> {
                     height: 25,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 80.0),
                     child: Container(
-                      height: size.height * 0.05,
-                      width: size.width * 0.4,
-                      decoration: BoxDecoration(
-                        boxShadow: const [BoxShadow(blurRadius: 3)],
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(
-                            Icons.settings,
-                            color: Color.fromARGB(255, 42, 133, 207),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Our Portfolio",
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 42, 133, 207),
+                        children: [
+                          Container(
+                            height: size.height * 0.05,
+                            width: size.width * 0.5,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(255, 118, 153, 182),
+                                  offset: Offset(
+                                    5.0,
+                                    5.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Stack(
+                                    children: const [
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.settings,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 7,
+                                  ),
+                                  Text(
+                                    "Your Portfolio",
+                                    style: TextStyle(
+                                      color: btextcolor,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -1536,9 +1861,10 @@ class _HomepageState extends State<Homepage> {
                     child: Text(
                       "We do more than just Web Development!",
                       style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 17, 91, 151)),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: blueclor,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1548,7 +1874,11 @@ class _HomepageState extends State<Homepage> {
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(
                       "We do more than just Web  Development! Our company also ensure that the software designed and developed by us meets quality standards.",
-                      style: TextStyle(color: Color.fromARGB(255, 51, 77, 99)),
+                      style: TextStyle(
+                        color: stextcolor,
+                        fontSize: 15,
+                        height: 1.5,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -1577,10 +1907,12 @@ class _HomepageState extends State<Homepage> {
                             onPressed: () {
                               setState(() {});
                             },
-                            child: const Text(
+                            child: Text(
                               "Allaboutdevelopment",
                               style: TextStyle(
-                                color: Color.fromARGB(255, 3, 54, 96),
+                                color: blueclor,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
@@ -1763,26 +2095,208 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(
                     height: 25,
                   ),
-                  CarouselSlider(
-                    items: sliderTextList,
-                    options: CarouselOptions(
-                      height: 400,
-                      aspectRatio: 25 / 5,
-                      // autoPlay: true,
-                    ),
+                  Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      CarouselSlider(
+                        items: sliderTextList,
+                        options: CarouselOptions(
+                          height: size.height * 0.5,
+                          aspectRatio: 16 / 9,
+                          viewportFraction: 1.0,
+                          initialPage: 0,
+                          enableInfiniteScroll: true,
+                          reverse: false,
+                          autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              const Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enlargeCenterPage: true,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              activeIndex = index;
+                            });
+                          },
+                          scrollDirection: Axis.horizontal,
+                        ),
+                      ),
+
+                      // add the animated dots indicator heare
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 10.0,
+                        ),
+                        child: AnimatedSmoothIndicator(
+                          activeIndex: activeIndex,
+                          count: sliderTextList.length,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   Stack(
                     children: [
+                      Container(
+                        height: size.height,
+                      ),
                       Image.asset(
                         'assets/footbg.jpg',
+                        height: size.height,
+                        fit: BoxFit.cover,
                       ),
                       const Text(
                         "VISIT US",
                         style: TextStyle(
-                            fontSize: 22,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: blueclor,
+                        ),
+                      ),
+                      Positioned(
+                        top: 50,
+                        child: Text(
+                          "Newzealand Office",
+                          style: TextStyle(
+                            fontSize: 19,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 12, 62, 103)),
-                      )
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 70,
+                        child: Text(
+                          "98 Tiverton Rd, New Windsor, Auckland 0600",
+                          style: TextStyle(
+                            color: blueclor,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 105,
+                        child: Text(
+                          "Australia Office",
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 125,
+                        child: Text(
+                          "Unit 18 1 Browne Pde, Warwick Farm, NSW, 2170",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: blueclor,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 170,
+                        child: Text(
+                          "Canada Office",
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 195,
+                        child: Text(
+                          "115 Bellchase Trail, Brampton, ON L6P 3L3",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: blueclor,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 230,
+                        child: Text(
+                          "USA Office",
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 250,
+                        child: Text(
+                          "316 Quince Ave Galloway, NJ 08205",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: blueclor,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 280,
+                        child: Text(
+                          "London Office",
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 305,
+                        child: Text(
+                          "27 Old Gloucester Street LONDON WC1N 3AX \n UNITED  KINGDOM",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: blueclor,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 30,
+                        child: Text(
+                          "COMPANY NUMBER: 13953026",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: blueclor,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 350,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.facebook_outlined,
+                              size: 32,
+                              color: blueclor,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/instagram.png',
+                              color: blueclor,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/linkedin (1).png',
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/twitter (1).png',
+                              color: blueclor,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ],
