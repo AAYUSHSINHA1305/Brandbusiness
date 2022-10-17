@@ -1,6 +1,8 @@
+import 'package:brandbusiness/pages/digital_marketing.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Homepage extends StatefulWidget {
@@ -481,52 +483,53 @@ class _HomepageState extends State<Homepage> {
                       child: Row(
                         children: [
                           Container(
-                              height: size.height * 0.05,
-                              width: size.width * 0.5,
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
-                                color: Colors.white,
-                                boxShadow: const [
-                                  BoxShadow(
-                                    color: Color.fromARGB(255, 118, 153, 182),
-                                    offset: Offset(
-                                      5.0,
-                                      5.0,
+                            height: size.height * 0.05,
+                            width: size.width * 0.5,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              color: Colors.white,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(255, 118, 153, 182),
+                                  offset: Offset(
+                                    5.0,
+                                    5.0,
+                                  ),
+                                  blurRadius: 10.0,
+                                  spreadRadius: 1.0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Stack(
+                                    children: const [
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.settings,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 7,
+                                  ),
+                                  Text(
+                                    "Featured Services",
+                                    style: TextStyle(
+                                      color: btextcolor,
                                     ),
-                                    blurRadius: 10.0,
-                                    spreadRadius: 1.0,
                                   ),
                                 ],
                               ),
-                              child: Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Stack(
-                                      children: const [
-                                        CircleAvatar(
-                                          minRadius: 16.0,
-                                          backgroundColor: blueclor,
-                                          child: Icon(
-                                            Icons.settings,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      width: 7,
-                                    ),
-                                    Text(
-                                      "Featured Services",
-                                      style: TextStyle(
-                                        color: btextcolor,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -645,7 +648,7 @@ class _HomepageState extends State<Homepage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Container(
-                      height: size.height * 0.5,
+                      height: size.height * 0.45,
                       width: size.width,
                       decoration: BoxDecoration(
                         color: cardcolorp,
@@ -666,7 +669,7 @@ class _HomepageState extends State<Homepage> {
                             ),
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 15,
                           ),
                           Padding(
                             padding:
@@ -684,7 +687,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   //  circle button
                   Center(
@@ -694,7 +697,11 @@ class _HomepageState extends State<Homepage> {
                         size: 50,
                       ),
                       color: btextcolor,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(
+                          () => DigMarket(),
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(
@@ -2101,7 +2108,7 @@ class _HomepageState extends State<Homepage> {
                       CarouselSlider(
                         items: sliderTextList,
                         options: CarouselOptions(
-                          height: size.height * 0.5,
+                          height: size.height * 0.45,
                           aspectRatio: 16 / 9,
                           viewportFraction: 1.0,
                           initialPage: 0,
@@ -2134,9 +2141,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
+
                   Stack(
                     children: [
                       Container(
@@ -2147,154 +2152,432 @@ class _HomepageState extends State<Homepage> {
                         height: size.height,
                         fit: BoxFit.cover,
                       ),
-                      const Text(
-                        "VISIT US",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: blueclor,
-                        ),
-                      ),
                       Positioned(
-                        top: 50,
-                        child: Text(
-                          "Newzealand Office",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                        top: 20,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: const Text(
+                            "VISIT US",
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: blueclor,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 70,
-                        child: Text(
-                          "98 Tiverton Rd, New Windsor, Auckland 0600",
-                          style: TextStyle(
-                            color: blueclor,
-                            fontSize: 15,
+                        top: 60,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Newzealand Office",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 105,
-                        child: Text(
-                          "Australia Office",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                        top: 80,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "98 Tiverton Rd, New Windsor, Auckland 0600",
+                            style: TextStyle(
+                              color: blueclor,
+                              fontSize: 15,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 125,
-                        child: Text(
-                          "Unit 18 1 Browne Pde, Warwick Farm, NSW, 2170",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: blueclor,
+                        top: 100,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Australia Office",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 120,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Unit 18 1 Browne Pde, Warwick Farm, NSW, 2170",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: blueclor,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 150,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Canada Office",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
                         top: 170,
-                        child: Text(
-                          "Canada Office",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "115 Bellchase Trail, Brampton, ON L6P 3L3",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: blueclor,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 195,
-                        child: Text(
-                          "115 Bellchase Trail, Brampton, ON L6P 3L3",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: blueclor,
+                        top: 200,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "USA Office",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 230,
-                        child: Text(
-                          "USA Office",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                        top: 220,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "316 Quince Ave Galloway, NJ 08205",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: blueclor,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
                         top: 250,
-                        child: Text(
-                          "316 Quince Ave Galloway, NJ 08205",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: blueclor,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "London Office",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 280,
-                        child: Text(
-                          "London Office",
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                        top: 270,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "27 Old Gloucester Street LONDON WC1N 3AX \n UNITED  KINGDOM",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: blueclor,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
-                        top: 305,
-                        child: Text(
-                          "27 Old Gloucester Street LONDON WC1N 3AX \n UNITED  KINGDOM",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: blueclor,
+                        top: 320,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
                           ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 30,
-                        child: Text(
-                          "COMPANY NUMBER: 13953026",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: blueclor,
+                          child: Text(
+                            "COMPANY NUMBER: 13953026",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: blueclor,
+                            ),
                           ),
                         ),
                       ),
                       Positioned(
                         top: 350,
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.facebook_outlined,
-                              size: 32,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.facebook_outlined,
+                                size: 32,
+                                color: blueclor,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Image.asset(
+                                'assets/instagram.png',
+                                color: blueclor,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Image.asset(
+                                'assets/linkedin (1).png',
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Image.asset(
+                                'assets/twitter (1).png',
+                                color: blueclor,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 390,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15.0),
+                          child: Text(
+                            "CONTACT US",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 26,
+                                color: blueclor),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 420,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'New Zealand : ',
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black,
+                              ),
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: '+64 9 889 4211',
+                                  style: TextStyle(
+                                    fontSize: 19,
+                                    color: blueclor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 450,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Australia : : ',
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black,
+                              ),
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: '+61 28006 4422',
+                                  style: TextStyle(
+                                    fontSize: 19,
+                                    color: blueclor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 480,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'USA & Canada  : ',
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black,
+                              ),
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: ' +1 8148220436',
+                                  style: TextStyle(
+                                    fontSize: 19,
+                                    color: blueclor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 510,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'UK  : ',
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black,
+                              ),
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: '+44 20 3239 4243',
+                                  style: TextStyle(
+                                    fontSize: 19,
+                                    color: blueclor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 550,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "support@webmaniacs.co.nz",
+                            style: TextStyle(
+                              fontSize: 19,
+                              color: btextcolor,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 580,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "PAYMENT",
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
                               color: blueclor,
                             ),
-                            SizedBox(
-                              width: 5,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 620,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Image.asset("assets/payment.png"),
+                        ),
+                      ),
+                      Positioned(
+                        top: 730,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Our Delivery Partner",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Image.asset(
-                              'assets/instagram.png',
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 750,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Proclivity Digitech",
+                            style: TextStyle(
+                              fontSize: 15,
                               color: blueclor,
                             ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Image.asset(
-                              'assets/linkedin (1).png',
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Image.asset(
-                              'assets/twitter (1).png',
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Divider(
+                          height: 1550,
+                          thickness: 1,
+                          color: btextcolor,
+                        ),
+                      ),
+                      Positioned(
+                        top: 70,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
+                          child: Text(
+                            "Copyright 2021 | Web Maniacs Ltd . All Rights Reserved.",
+                            style: TextStyle(
+                              fontSize: 15,
                               color: blueclor,
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ],

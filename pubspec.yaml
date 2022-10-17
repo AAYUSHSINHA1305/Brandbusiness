@@ -37,7 +37,6 @@ dependencies:
   get: ^4.6.5
   carousel_slider: ^4.1.1
   smooth_page_indicator: ^1.0.0+2
-  TestStyle: ^3.0.1
   ionicons: ^0.2.1
 
 
