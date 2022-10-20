@@ -9,6 +9,29 @@ class Quote extends StatefulWidget {
 }
 
 class _QuoteState extends State<Quote> {
+  List<DropdownMenuItem<String>> dropDownItems = <DropdownMenuItem<String>>[
+    DropdownMenuItem(value: 'Option 1', child: Text('Select a subject')),
+    DropdownMenuItem(value: 'Option 2', child: Text('Web Design & Devlopment')),
+    DropdownMenuItem(
+        value: 'Option 3', child: Text('Android & iOS Development')),
+    DropdownMenuItem(
+        value: 'Option 4', child: Text('Web Application Development')),
+    DropdownMenuItem(value: 'Option 5', child: Text('Digital Marketing')),
+    DropdownMenuItem(value: 'Option 6', child: Text('Wi-Fi Marketing')),
+    DropdownMenuItem(
+        value: 'Option 7', child: Text('Custom Software Development')),
+    DropdownMenuItem(value: 'Option 8', child: Text('Lead Generation')),
+    DropdownMenuItem(value: 'Option 9', child: Text('Other')),
+  ];
+
+  var dropDownValue;
+
+  @override
+  void initState() {
+    super.initState();
+    dropDownValue = dropDownItems[0].value;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -269,11 +292,26 @@ class _QuoteState extends State<Quote> {
                   ),
                 ),
               ),
-              ExpansionTile(
-                title: Text(
-                  'Select Ope',
-                ),
+              SizedBox(
+                height: size.height * 0.02,
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                ),
+                child: DropdownButtonFormField(
+                    items: dropDownItems,
+                    value: dropDownValue,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1, color: Colors.grey),
+                    )),
+                    onChanged: (val) {
+                      setState(() {
+                        dropDownValue = val;
+                      });
+                    }),
+              )
             ],
           ),
         ),

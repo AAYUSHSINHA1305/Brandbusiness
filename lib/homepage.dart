@@ -510,17 +510,14 @@ class _HomepageState extends State<Homepage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Stack(
-                                        children: const [
-                                          CircleAvatar(
-                                            minRadius: 16.0,
-                                            backgroundColor: blueclor,
-                                            child: Icon(
-                                              Icons.settings,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ],
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.settings,
+                                          color: Colors.white,
+                                          size: size.height * 0.02,
+                                        ),
                                       ),
                                       SizedBox(
                                         width: 7,
