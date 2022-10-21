@@ -1,3 +1,4 @@
+import 'package:brandbusiness/pages/allaboutdevelopment.dart';
 import 'package:brandbusiness/pages/digital_marketing.dart';
 import 'package:brandbusiness/pages/quote.dart';
 import 'package:brandbusiness/pages/web_application.dart';
@@ -516,7 +517,6 @@ class _HomepageState extends State<Homepage> {
                                         child: Icon(
                                           Icons.settings,
                                           color: Colors.white,
-                                          size: size.height * 0.02,
                                         ),
                                       ),
                                       SizedBox(
@@ -783,17 +783,13 @@ class _HomepageState extends State<Homepage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Stack(
-                                        children: const [
-                                          CircleAvatar(
-                                            minRadius: 16.0,
-                                            backgroundColor: blueclor,
-                                            child: Icon(
-                                              Icons.person,
-                                              color: Colors.white,
-                                            ),
-                                          )
-                                        ],
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       SizedBox(
                                         width: 8,
@@ -1554,17 +1550,13 @@ class _HomepageState extends State<Homepage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Stack(
-                                        children: const [
-                                          CircleAvatar(
-                                            minRadius: 16.0,
-                                            backgroundColor: blueclor,
-                                            child: Icon(
-                                              Icons.person,
-                                              color: Colors.white,
-                                            ),
-                                          )
-                                        ],
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       SizedBox(
                                         width: 7,
@@ -1889,17 +1881,13 @@ class _HomepageState extends State<Homepage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Stack(
-                                        children: const [
-                                          CircleAvatar(
-                                            minRadius: 16.0,
-                                            backgroundColor: blueclor,
-                                            child: Icon(
-                                              Icons.settings,
-                                              color: Colors.white,
-                                            ),
-                                          )
-                                        ],
+                                      CircleAvatar(
+                                        minRadius: 16.0,
+                                        backgroundColor: blueclor,
+                                        child: Icon(
+                                          Icons.settings,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       SizedBox(
                                         width: 7,
@@ -1958,32 +1946,37 @@ class _HomepageState extends State<Homepage> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Row(
-                            children: [
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.add,
-                                  color: Color.fromARGB(255, 3, 54, 96),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  setState(() {});
-                                },
-                                child: Text(
-                                  "Allaboutdevelopment",
-                                  style: TextStyle(
-                                    color: blueclor,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ],
+                        child: ExpansionTile(
+                          title: Text(
+                            'Allaboutdevelopment',
+                            style: TextStyle(
+                              color: expantcol,
+                            ),
                           ),
+                          children: <Widget>[
+                            ListTile(
+                              title: Image.asset(
+                                "assets/Portfolio2_1-600x294.png",
+                              ),
+                              subtitle: Text(
+                                "We pride our selves in providing high quality workmanship, along with top quality customer services across the Auckland region.",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: stextclor,
+                                  height: 1.2,
+                                ),
+                              ),
+                            ),
+                            MaterialButton(
+                              color: btextcolor,
+                              onPressed: () {
+                                Get.to(() => Allaboutd());
+                              },
+                              child: Text(
+                                "VIEW LIVE SITE",
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Container(
@@ -1994,28 +1987,29 @@ class _HomepageState extends State<Homepage> {
                             style: BorderStyle.solid,
                           ),
                         ),
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Row(
-                            children: [
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.add,
-                                  color: Color.fromARGB(255, 3, 54, 96),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "China Beach Restaurant",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 3, 54, 96),
-                                  ),
-                                ),
-                              ),
-                            ],
+                        child: ExpansionTile(
+                          title: Text(
+                            'China Beach Restaurant',
+                            style: TextStyle(
+                              color: expantcol,
+                            ),
                           ),
+                          children: <Widget>[
+                            ListTile(
+                              title: Image.asset(
+                                "assets/Portfolio2_2.png",
+                              ),
+                            ),
+                            MaterialButton(
+                              color: btextcolor,
+                              onPressed: () {
+                                Get.to(() => Allaboutd());
+                              },
+                              child: Text(
+                                "VIEW LIVE SITE",
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Container(
