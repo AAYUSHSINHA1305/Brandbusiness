@@ -236,7 +236,7 @@ class _QuoteState extends State<Quote> {
                     ),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Last Name *",
+                        hintText: "Phone *",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(0),
@@ -254,7 +254,7 @@ class _QuoteState extends State<Quote> {
                     ),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Email",
+                        hintText: "Email *",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(0),
@@ -273,24 +273,6 @@ class _QuoteState extends State<Quote> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         hintText: "Company Name ",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: size.height * 0.02,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(0),
@@ -337,9 +319,6 @@ class _QuoteState extends State<Quote> {
                         hintText: 'Message',
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: size.height * 0.02,
                   ),
                   SizedBox(
                     height: size.height * 0.02,
