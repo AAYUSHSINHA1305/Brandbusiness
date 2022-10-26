@@ -504,7 +504,7 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    steps("3`", "Transform your indeas"),
+                    steps("3", "Transform your indeas"),
                     const SizedBox(
                       height: 25,
                     ),
@@ -517,7 +517,7 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 25,
                     ),
-                    button(size, "Your Mission"),
+                    button(size, "our Mission"),
                     const SizedBox(
                       height: 15,
                     ),
@@ -531,42 +531,74 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 25,
                     ),
+
                     expansion(
                         "Business Consulting",
                         "assets/tab-pic.jpg",
                         "The team of Web Maniacs helps to provide complete web consultation services to every approaching client. Our industry-standard consulting services comprise of website development, application development, graphic designing, e-commerce platforms customization, offshore social media marketing website development, digital marketing & SEO.",
                         "Through Market Research To Retain Prospective Customers",
+                        "",
                         false, [
-                      "Our dynamic team of experts is certified to conduct eventual market research and understand what’s preferred in the current market. We’ve years of experience in related genres and well-versed to generate clients, increase as well as retain several prospective customers, and guide you to attain success at the earliest. And also, we will assure your peace of mind and guaranteed outcome."
+                      "Our dynamic team of experts is certified to conduct eventual market research and understand what's preferred in the current market. We've years of experience in related genres and well-versed to generate clients, increase as well as retain several prospective customers, and guide you to attain success at the earliest. And also, we will assure your peace of mind and guaranteed outcome."
                     ]),
                     expansion(
                         "Business Analytics",
                         "assets/Business-Analytics.png",
                         "At Web Maniacs, you can meet your specific information required and make a smart choice with our world-class services to visualize and shared information collected across multiple sources. The team of Web Maniacs helps to facilitate data-driven decision-making with interactive and rich info visualizations, and incorporate information to optimize steps and accelerate performance. From full-time business support to online marketing and generation of clients, with our experts, you can get whatever is required to achieve ultimate success in your company.",
                         "Transforming Data Into Insight & Action",
-                        true,
-                        ["dscription 2"]),
+                        "",
+                        true, [
+                      "Human Resource Analytics",
+                      "Marketing Analytics",
+                      "Finance Analytics",
+                      "Sales Analytics",
+                      "Customer Support Analytics",
+                      "Operations Analytics"
+                    ]),
                     expansion(
-                        "Business Analytics",
-                        "assets/Business-Analytics.png",
-                        "At Web Maniacs, you can meet your specific information required and make a smart choice with our world-class services to visualize and shared information collected across multiple sources. The team of Web Maniacs helps to facilitate data-driven decision-making with interactive and rich info visualizations, and incorporate information to optimize steps and accelerate performance. From full-time business support to online marketing and generation of clients, with our experts, you can get whatever is required to achieve ultimate success in your company.",
-                        "Transforming Data Into Insight & Action",
-                        true,
-                        ["dscription 2"]),
+                        "Marketing Research",
+                        "assets/Marketing-Research.png",
+                        "Our industry-standard marketing research solutions can meet all your survey needs and possibilities to retain clients. From brand tracking to customer approach and concept evaluation, our certified experts can cover you with widespread marketing research services, which are scale to meet your needs. You can select a package or customize your plans to conduct your industry-specific marketing research.",
+                        "Leading Brands Prefer Our Widespread Marketing Research Support",
+                        "To customize a package of products and services to satisfy your individual needs, including -",
+                        true, [
+                      "Survey Platform",
+                      "Targeted Responses",
+                      "Product Training",
+                      "Dedicated Phone Support",
+                      "Access To Niche & B2B Targeting",
+                      "Customized Survey Templates"
+                    ]),
                     expansion(
-                        "Business Analytics",
-                        "assets/Business-Analytics.png",
-                        "At Web Maniacs, you can meet your specific information required and make a smart choice with our world-class services to visualize and shared information collected across multiple sources. The team of Web Maniacs helps to facilitate data-driven decision-making with interactive and rich info visualizations, and incorporate information to optimize steps and accelerate performance. From full-time business support to online marketing and generation of clients, with our experts, you can get whatever is required to achieve ultimate success in your company.",
-                        "Transforming Data Into Insight & Action",
-                        true,
-                        ["dscription 2"]),
+                        "Branding Support",
+                        "assets/Branding-Support.png",
+                        "If you want to create your online presence and authentically generate clients, our marketing experts are always ready to offer the best help. Web Maniacs offers a wide range of consulting, coaching, and support of brands that helps to manifest your clients about your world-class solutions. By diving into your core messaging, objectives, and prospective clients, our experts will give you ample options for branding development.",
+                        "Empowering Your Brands & Business Into The Next Level",
+                        "",
+                        true, [
+                      "Your Full-Branding Suite (Logo Designing, Fonts & Strategically Selected Color Palette)",
+                      "Enticing Collateral",
+                      "Create A User-Friendly Website On The Platform of Your Choice",
+                      "Brand-Oriented Photography of Your Product & Services",
+                      "Content-Related Works For Brand Promotion"
+                    ]),
                     expansion(
-                        "Business Analytics",
-                        "assets/Business-Analytics.png",
-                        "At Web Maniacs, you can meet your specific information required and make a smart choice with our world-class services to visualize and shared information collected across multiple sources. The team of Web Maniacs helps to facilitate data-driven decision-making with interactive and rich info visualizations, and incorporate information to optimize steps and accelerate performance. From full-time business support to online marketing and generation of clients, with our experts, you can get whatever is required to achieve ultimate success in your company.",
-                        "Transforming Data Into Insight & Action",
-                        true,
-                        ["dscription 2"]),
+                        "Media Marketing",
+                        "assets/Media-Marketing.png",
+                        "Web Maniacs is well-established as a versatile online marketing agency, which never relies upon mirrors and smoke to attract new customers. Our dynamic team of experts aims at search engine optimization and upgraded marketing skills to attract new clients to your official website. We aren’t a stagnant company, and so explored widespread industries to offer exact solutions to all our clients. The team of Web Maniacs has the experience and experts to create a custom website and incorporate multiple online marketing services to assist all-size companies in any industry.",
+                        "Grow Your Client Base With Our Data-Driven & Targeted Strategies",
+                        "",
+                        true, [
+                      "Technical SEO",
+                      "Franchi SEO",
+                      "Local SEO",
+                      "Link Building",
+                      "Social Media Marketing",
+                      "Custom Website Design & Development",
+                      "Pay-Per-Click (PPC) Management",
+                      "Online Reputation Management",
+                      "Content Marketing"
+                    ]),
                     const SizedBox(
                       height: 25,
                     ),
@@ -675,6 +707,12 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 25,
                     ),
+                    stextText(
+                        "To customize a package of products and services to satisfy your individual needs, including -",
+                        1.5),
+                    const SizedBox(
+                      height: 25,
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -740,7 +778,6 @@ class _HomepageState extends State<Homepage> {
                           MaterialButton(
                             color: btextcolor,
                             onPressed: () {
-                              // Get.to(() => Allaboutd());
                               launch_url('https://webmaniacs.co.nz/#');
                             },
                             child: Text(
@@ -774,7 +811,6 @@ class _HomepageState extends State<Homepage> {
                           MaterialButton(
                             color: btextcolor,
                             onPressed: () {
-                              // Get.to(() => Allaboutd());
                               launch_url('https://selcofood.com.au/');
                             },
                             child: Text(
@@ -808,7 +844,6 @@ class _HomepageState extends State<Homepage> {
                           MaterialButton(
                             color: btextcolor,
                             onPressed: () {
-                              // Get.to(() => Allaboutd());
                               launch_url('https://www.efxhair.co.nz/');
                             },
                             child: Text(
@@ -842,7 +877,6 @@ class _HomepageState extends State<Homepage> {
                           MaterialButton(
                             color: btextcolor,
                             onPressed: () {
-                              // Get.to(() => Allaboutd());
                               launch_url('https://www.purakau.co.nz/');
                             },
                             child: Text(
@@ -1123,7 +1157,7 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
         Positioned(
-          bottom: 275,
+          bottom: 305,
           left: 20,
           child: Visibility(
             visible: (logo),
@@ -1257,8 +1291,8 @@ class _HomepageState extends State<Homepage> {
             ),
             // Circle button -1
             Positioned(
-              top: 35,
-              left: 155,
+              top: 345,
+              left: 145,
               child: IconButton(
                 icon: const Icon(
                   Icons.add_circle_outline,
@@ -1317,11 +1351,15 @@ class _HomepageState extends State<Homepage> {
           height: 40,
           width: 40,
         ),
-        Text(
-          text,
-          style: TextStyle(
-            color: Color.fromARGB(255, 131, 136, 139),
-            fontSize: 18,
+        // If the text is inside a row, we need to wrap the text with Expanded
+        Expanded(
+          child: Text(
+            text,
+            overflow: TextOverflow.ellipsis, // add this to avoid overflow error
+            style: TextStyle(
+              color: Color.fromARGB(255, 131, 136, 139),
+              fontSize: 18,
+            ),
           ),
         ),
       ],
@@ -1329,7 +1367,9 @@ class _HomepageState extends State<Homepage> {
   }
 
   Widget expansion(String heading, String img, String dsc, String heading2,
-      bool isTickedList, List<String> dsc2) {
+      String stext, bool isTickedList, List<String> dsc2) {
+    double d;
+    String text;
     return ExpansionTile(
       title: Text(heading),
       children: [
@@ -1353,6 +1393,7 @@ class _HomepageState extends State<Homepage> {
         const SizedBox(
           height: 25,
         ),
+        stextText(stext, 1.5),
         Text(
           heading2,
           textAlign: TextAlign.center,
@@ -1412,6 +1453,21 @@ class _HomepageState extends State<Homepage> {
         style: TextStyle(
           fontSize: 19,
           fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget stextText(String text, double d) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 15,
+          color: stextclor,
         ),
       ),
     );
