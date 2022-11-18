@@ -1,5 +1,6 @@
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DigitalMarketing extends StatefulWidget {
   const DigitalMarketing({super.key});
@@ -716,7 +717,8 @@ class _DigitalMarketingState extends State<DigitalMarketing> {
                       iconSize: 30,
                       highlightColor: Colors.black,
                       onPressed: () {},
-                      icon: Icon(Icons.whatsapp),
+                      icon: FaIcon(FontAwesomeIcons
+                          .whatsapp), // it's not available in flutter. we need to add it from flaticon or fontawesome
                     ),
                   ),
                 ],

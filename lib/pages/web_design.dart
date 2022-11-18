@@ -1,5 +1,6 @@
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class WebDesign extends StatefulWidget {
   const WebDesign({super.key});
@@ -557,7 +558,7 @@ class _WebDesignState extends State<WebDesign> {
                       iconSize: 30,
                       highlightColor: Colors.black,
                       onPressed: () {},
-                      icon: Icon(Icons.whatsapp),
+                      icon: FaIcon(FontAwesomeIcons.whatsapp),
                     ),
                   ),
                 ],

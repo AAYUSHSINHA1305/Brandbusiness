@@ -1,5 +1,9 @@
+import 'package:brandbusiness/services/launch.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Quote extends StatefulWidget {
   const Quote({super.key});
@@ -10,21 +14,34 @@ class Quote extends StatefulWidget {
 
 class _QuoteState extends State<Quote> {
   List<DropdownMenuItem<String>> dropDownItems = <DropdownMenuItem<String>>[
-    DropdownMenuItem(value: 'Option 1', child: Text('Select a subject')),
-    DropdownMenuItem(value: 'Option 2', child: Text('Web Design & Devlopment')),
+    DropdownMenuItem(value: 'No Subject', child: Text('Select a subject')),
     DropdownMenuItem(
-        value: 'Option 3', child: Text('Android & iOS Development')),
+        value: 'Web Design & Devlopment',
+        child: Text('Web Design & Devlopment')),
     DropdownMenuItem(
-        value: 'Option 4', child: Text('Web Application Development')),
-    DropdownMenuItem(value: 'Option 5', child: Text('Digital Marketing')),
-    DropdownMenuItem(value: 'Option 6', child: Text('Wi-Fi Marketing')),
+        value: 'Android & iOS Development',
+        child: Text('Android & iOS Development')),
     DropdownMenuItem(
-        value: 'Option 7', child: Text('Custom Software Development')),
-    DropdownMenuItem(value: 'Option 8', child: Text('Lead Generation')),
-    DropdownMenuItem(value: 'Option 9', child: Text('Other')),
+        value: 'Web Application Development',
+        child: Text('Web Application Development')),
+    DropdownMenuItem(
+        value: 'Digital Marketing', child: Text('Digital Marketing')),
+    DropdownMenuItem(value: 'Wi-Fi Marketing', child: Text('Wi-Fi Marketing')),
+    DropdownMenuItem(
+        value: 'Custom Software Development',
+        child: Text('Custom Software Development')),
+    DropdownMenuItem(value: 'Lead Generation', child: Text('Lead Generation')),
+    DropdownMenuItem(value: 'Other', child: Text('Other')),
   ];
 
   var dropDownValue;
+
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController companyNameController = TextEditingController();
+  TextEditingController messageController = TextEditingController();
 
   @override
   void initState() {
@@ -199,6 +216,7 @@ class _QuoteState extends State<Quote> {
                       horizontal: 15,
                     ),
                     child: TextFormField(
+                      controller: firstNameController,
                       decoration: InputDecoration(
                         hintText: "First Name *",
                         border: OutlineInputBorder(
@@ -217,6 +235,7 @@ class _QuoteState extends State<Quote> {
                       horizontal: 15,
                     ),
                     child: TextFormField(
+                      controller: lastNameController,
                       decoration: InputDecoration(
                         hintText: "Last Name *",
                         border: OutlineInputBorder(
@@ -235,6 +254,7 @@ class _QuoteState extends State<Quote> {
                       horizontal: 15,
                     ),
                     child: TextFormField(
+                      controller: phoneController,
                       decoration: InputDecoration(
                         hintText: "Phone *",
                         border: OutlineInputBorder(
@@ -253,6 +273,7 @@ class _QuoteState extends State<Quote> {
                       horizontal: 15,
                     ),
                     child: TextFormField(
+                      controller: emailController,
                       decoration: InputDecoration(
                         hintText: "Email *",
                         border: OutlineInputBorder(
@@ -271,6 +292,7 @@ class _QuoteState extends State<Quote> {
                       horizontal: 15,
                     ),
                     child: TextFormField(
+                      controller: companyNameController,
                       decoration: InputDecoration(
                         hintText: "Company Name ",
                         border: OutlineInputBorder(
@@ -311,7 +333,8 @@ class _QuoteState extends State<Quote> {
                     padding: EdgeInsets.symmetric(
                       horizontal: 15,
                     ),
-                    child: TextField(
+                    child: TextFormField(
+                      controller: messageController,
                       textInputAction: TextInputAction.done,
                       maxLines: 10,
                       decoration: InputDecoration(
@@ -328,7 +351,9 @@ class _QuoteState extends State<Quote> {
                       left: 15,
                     ),
                     child: MaterialButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        submitForm();
+                      }),
                       child: Text(
                         "Submit",
                         style: TextStyle(
@@ -339,6 +364,14 @@ class _QuoteState extends State<Quote> {
                       color: blueclor,
                     ),
                   ),
+                  Visibility(
+                      visible: false,
+                      child: Row(
+                        children: [
+                          Icon(Icons.check),
+                          Text("The form was sent successfully"),
+                        ],
+                      )),
                   SizedBox(
                     height: size.height * 0.02,
                   ),
@@ -787,7 +820,7 @@ class _QuoteState extends State<Quote> {
                       iconSize: 30,
                       highlightColor: Colors.black,
                       onPressed: () {},
-                      icon: Icon(Icons.whatsapp),
+                      icon: FaIcon(FontAwesomeIcons.whatsapp),
                     ),
                   ),
                 ],
@@ -798,4 +831,50 @@ class _QuoteState extends State<Quote> {
       ),
     );
   }
+
+  Future<void> submitForm() async {
+    String reciepent =
+        "support@webmaniacs.co.nz@gmail.com"; //place the support email of webmaniacs
+    String subject = dropDownValue.toString();
+    String body = '''
+     First Name : ${firstNameController.text} 
+     Last Name : ${lastNameController.text} 
+     Phone : ${phoneController.text}
+     Email id : ${emailController.text}
+     Subject : ${dropDownValue.toString()}
+     Message : ${messageController.text} 
+     ''';
+    String url = 'mailto:$reciepent?subject=$subject&body=$body';
+    Launch.launch_url(url);
+  }
+
+  // Future<void> submitForm() async {
+  //   final Email email = Email(
+  //     body: messageController.text,
+  //     subject: dropDownValue.toString(),
+  //     recipients: [
+  //       'aayushsinha2020@gmail.com' // for testing
+  //     ], // support email id of webmaniacs
+  //     attachmentPaths: [],
+  //     isHTML: true,
+  //   );
+  //   //
+  //   String platformResponse;
+
+  //   try {
+  //     await FlutterEmailSender.send(email);
+  //     platformResponse = 'success';
+  //   } catch (error) {
+  //     print(error);
+  //     platformResponse = error.toString();
+  //   }
+
+  //   if (!mounted) return;
+
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //       content: Text(platformResponse + " \nGet a quote page"),
+  //     ),
+  //   );
+  // }
 }

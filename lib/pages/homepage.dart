@@ -1,11 +1,13 @@
 import 'package:brandbusiness/pages/quote.dart';
 import 'package:brandbusiness/pages/web_application.dart';
+import 'package:brandbusiness/services/launch.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -21,6 +23,14 @@ class _HomepageState extends State<Homepage> {
   bool brandingsupport = false;
   bool mediamarketing = false;
   int activeIndex = 0;
+
+  int get contactNo => 64227000067;
+
+  get countryCode => null;
+
+  get attachments => null;
+
+  get isHTML => null;
 
 // method to launch a url
   Future<void> launch_url(String _url) async {
@@ -427,6 +437,16 @@ class _HomepageState extends State<Homepage> {
       ),
     ];
 
+    final _recipientController = TextEditingController(
+      text: 'example@example.com',
+    );
+
+    final _subjectController = TextEditingController(text: 'The subject');
+
+    final _bodyController = TextEditingController(
+      text: 'Mail body.',
+    );
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -701,18 +721,19 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 25,
                     ),
-                    dscText(
-                        "We do more than just Web  Development! Our company also ensure that the software designed and developed by us meets quality standards.",
-                        1.5),
-                    const SizedBox(
-                      height: 25,
-                    ),
                     stextText(
                         "To customize a package of products and services to satisfy your individual needs, including -",
                         1.5),
                     const SizedBox(
                       height: 25,
                     ),
+                    dscText(
+                        "We do more than just Web  Development! Our company also ensure that the software designed and developed by us meets quality standards.",
+                        1.5),
+                    const SizedBox(
+                      height: 25,
+                    ),
+
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -959,30 +980,54 @@ class _HomepageState extends State<Homepage> {
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(
-                                      Icons.facebook_outlined,
-                                      size: 42,
-                                      color: blueclor,
+                                    GestureDetector(
+                                      onTap: (() {
+                                        launch_url(
+                                            'https://www.facebook.com/webmaniacsnz.co.nz');
+                                      }),
+                                      child: Icon(
+                                        Icons.facebook_outlined,
+                                        size: 42,
+                                        color: blueclor,
+                                      ),
                                     ),
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Image.asset(
-                                      'assets/instagram.png',
-                                      color: blueclor,
+                                    GestureDetector(
+                                      onTap: (() {
+                                        launch_url(
+                                            "https://www.instagram.com/webmaniacsnz/");
+                                      }),
+                                      child: Image.asset(
+                                        'assets/instagram.png',
+                                        color: blueclor,
+                                      ),
                                     ),
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Image.asset(
-                                      'assets/linkedin (1).png',
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch_url(
+                                            "https://www.linkedin.com/company/webmaniacs/");
+                                      },
+                                      child: Image.asset(
+                                        'assets/linkedin (1).png',
+                                      ),
                                     ),
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Image.asset(
-                                      'assets/twitter (1).png',
-                                      color: blueclor,
+                                    GestureDetector(
+                                      onTap: () {
+                                        launch_url(
+                                            "https://twitter.com/webmaniacsnz");
+                                      },
+                                      child: Image.asset(
+                                        'assets/twitter (1).png',
+                                        color: blueclor,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -1109,8 +1154,16 @@ class _HomepageState extends State<Homepage> {
                     child: IconButton(
                       iconSize: 30,
                       highlightColor: Colors.black,
-                      onPressed: () {},
-                      icon: Icon(Icons.whatsapp),
+                      onPressed: () {
+                        // "whatsapp://send?phone=$phone&text=$message";
+                        String url = 'https://wa.me/+64227000067/';
+                        Launch.launch_url(url);
+                        // launchUrl(
+                        //     Uri.parse(
+                        //         'https://wa.me/$countryCode$contactNo?text=Hi'),
+                        //     mode: LaunchMode.externalApplication);
+                      },
+                      icon: FaIcon(FontAwesomeIcons.whatsapp),
                     ),
                   ),
                 ],
@@ -1252,7 +1305,7 @@ class _HomepageState extends State<Homepage> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
-        height: size.height * 0.5,
+        height: size.height * 0.55,
         width: size.width,
         decoration: BoxDecoration(
           color: cardColor,
@@ -1391,9 +1444,8 @@ class _HomepageState extends State<Homepage> {
         ),
         dscText(dsc, 2),
         const SizedBox(
-          height: 25,
+          height: 20,
         ),
-        stextText(stext, 1.5),
         Text(
           heading2,
           textAlign: TextAlign.center,
@@ -1404,7 +1456,11 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 25,
+        ),
+        stextText(stext, 1.5),
+        const SizedBox(
+          height: 25,
         ),
         (isTickedList)
             ? ListView.builder(
@@ -1512,5 +1568,20 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
     );
+  }
+
+  _launchWhatsapp() async {
+    var whatsapp = "+9113953026";
+    var whatsappAndroid =
+        Uri.parse("whatsapp://send?phone=$whatsapp&text=hello");
+    if (await canLaunchUrl(whatsappAndroid)) {
+      await launchUrl(whatsappAndroid);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("WhatsApp is not installed on the device"),
+        ),
+      );
+    }
   }
 }
