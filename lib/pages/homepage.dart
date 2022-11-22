@@ -453,7 +453,7 @@ class _HomepageState extends State<Homepage> {
           children: [
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 0.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -481,8 +481,8 @@ class _HomepageState extends State<Homepage> {
                         size,
                         cardcolorp,
                         'assets/ftr1.png',
-                        "Web Application Development",
-                        "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React."),
+                        "Web Design & Development",
+                        "You can trust our experts for designing and development an user friendly website for your company."),
                     sericesCard(
                         size,
                         cardcolorg,
@@ -493,8 +493,8 @@ class _HomepageState extends State<Homepage> {
                         size,
                         cardcolorp,
                         'assets/ftr1.png',
-                        "Web Application Development",
-                        "We only use the best platform to develop web application such as AngularJS, ASP.NET, Ruby on Rails(ROR), Symfony, Laravel, Node,React."),
+                        "Digital Marketing",
+                        "We can easily help you in promoting your brand and getting connected with your targeted customers."),
                     SizedBox(
                       height: 10,
                     ),
@@ -661,7 +661,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                     skillsCard("assets/icon-1.png"),
                     const SizedBox(
-                      height: 25,
+                      height: 0,
                     ),
                     headingText("Latest Technology", 22),
                     const SizedBox(
@@ -721,12 +721,7 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 25,
                     ),
-                    stextText(
-                        "To customize a package of products and services to satisfy your individual needs, including -",
-                        1.5),
-                    const SizedBox(
-                      height: 25,
-                    ),
+
                     dscText(
                         "We do more than just Web  Development! Our company also ensure that the software designed and developed by us meets quality standards.",
                         1.5),
@@ -1055,18 +1050,16 @@ class _HomepageState extends State<Homepage> {
                               SizedBox(
                                 height: 20,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 15,
-                                ),
-                                child: Text(
-                                  "support@webmaniacs.co.nz",
-                                  style: TextStyle(
-                                    fontSize: 19,
-                                    color: btextcolor,
-                                  ),
-                                ),
-                              ),
+                              TextButton(
+                                  onPressed: () async {
+                                    final url =
+                                        "mailto:support@webmaniacs.co.nz?subject=Support Enquiry Inquiry&body=";
+                                    Launch.launch_url(url);
+                                  },
+                                  child: Text(
+                                    "support@webmaniacs.co.nz",
+                                    style: TextStyle(fontSize: 18),
+                                  )),
                               SizedBox(
                                 height: 20,
                               ),
