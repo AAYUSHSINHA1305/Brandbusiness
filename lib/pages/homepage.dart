@@ -5,9 +5,11 @@ import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+// import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:flutter_braintree/flutter_braintree.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -17,6 +19,29 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  // static final String tokenizationKey = 'sandbox_8hxpnkht_kzdtzv2btm4p7s5j';
+
+  // BraintreeCreditCardRequest get request => request;
+  // void showNonce(BraintreePaymentMethodNonce nonce) {
+  //   showDialog(
+  //     context: context,
+  //     builder: (_) => AlertDialog(
+  //       title: Text('Payment method nonce:'),
+  //       content: Column(
+  //         mainAxisSize: MainAxisSize.min,
+  //         crossAxisAlignment: CrossAxisAlignment.stretch,
+  //         children: <Widget>[
+  //           Text('Nonce: ${nonce.nonce}'),
+  //           SizedBox(height: 16),
+  //           Text('Type label: ${nonce.typeLabel}'),
+  //           SizedBox(height: 16),
+  //           Text('Description: ${nonce.description}'),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
+
   bool businessconsuliting = false;
   bool businessanalytics = false;
   bool marketingresarch = false;
@@ -765,6 +790,7 @@ class _HomepageState extends State<Homepage> {
                             },
                             child: Text(
                               "VIEW LIVE SITE",
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -798,6 +824,7 @@ class _HomepageState extends State<Homepage> {
                             },
                             child: Text(
                               "VIEW LIVE SITE",
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -831,6 +858,7 @@ class _HomepageState extends State<Homepage> {
                             },
                             child: Text(
                               "VIEW LIVE SITE",
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -864,6 +892,7 @@ class _HomepageState extends State<Homepage> {
                             },
                             child: Text(
                               "VIEW LIVE SITE",
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -897,6 +926,7 @@ class _HomepageState extends State<Homepage> {
                             },
                             child: Text(
                               "VIEW LIVE SITE",
+                              style: TextStyle(color: Colors.white),
                             ),
                           ),
                         ],
@@ -1067,6 +1097,82 @@ class _HomepageState extends State<Homepage> {
                               SizedBox(
                                 height: 20,
                               ),
+                              // ElevatedButton(
+                              //   onPressed: () async {
+                              //     var request = BraintreeDropInRequest(
+                              //       tokenizationKey: tokenizationKey,
+                              //       collectDeviceData: true,
+                              //       googlePaymentRequest:
+                              //           BraintreeGooglePaymentRequest(
+                              //         totalPrice: '',
+                              //         currencyCode: '',
+                              //         billingAddressRequired: false,
+                              //       ),
+                              //       paypalRequest: BraintreePayPalRequest(
+                              //         amount: '',
+                              //         displayName: '',
+                              //       ),
+                              //       cardEnabled: true,
+                              //     );
+                              //     final result =
+                              //         await BraintreeDropIn.start(request);
+                              //     if (result != null) {
+                              //       showNonce(result.paymentMethodNonce);
+                              //     }
+                              //   },
+                              //   child: Text('LAUNCH NATIVE DROP-IN'),
+                              // ),
+                              // ElevatedButton(
+                              //   onPressed: () async {
+                              //     final Request = BraintreeCreditCardRequest(
+                              //         cardNumber: '',
+                              //         expirationMonth: '',
+                              //         expirationYear: '',
+                              //         cvv: '');
+                              //     final result =
+                              //         await Braintree.tokenizeCreditCard(
+                              //             tokenizationKey, request);
+
+                              //     if (result != null) {
+                              //       showNonce(result);
+                              //     }
+                              //   },
+                              //   child: Text('TOKENIZE CREDIT CARD'),
+                              // ),
+                              // ElevatedButton(
+                              //   onPressed: () async {
+                              //     final request = BraintreePayPalRequest(
+                              //       billingAgreementDescription:
+                              //           'I hereby agree that flutter_braintree is great.',
+                              //       displayName: 'Your Company',
+                              //     );
+                              //     final result =
+                              //         await Braintree.requestPaypalNonce(
+                              //       tokenizationKey,
+                              //       request,
+                              //     );
+                              //     if (result != null) {
+                              //       showNonce(result);
+                              //     }
+                              //   },
+                              //   child: Text('PAYPAL VAULT FLOW'),
+                              // ),
+                              // ElevatedButton(
+                              //   onPressed: () async {
+                              //     final request = BraintreePayPalRequest(
+                              //       amount: "",
+                              //     );
+                              //     final result =
+                              //         await Braintree.requestPaypalNonce(
+                              //       tokenizationKey,
+                              //       request,
+                              //     );
+                              //     if (result != null) {
+                              //       showNonce(result);
+                              //     }
+                              //   },
+                              //   child: Text('PAYPAL CHECKOUT FLOW'),
+                              // ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 15,

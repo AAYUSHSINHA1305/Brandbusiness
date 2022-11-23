@@ -1,9 +1,8 @@
 import 'package:brandbusiness/services/launch.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Quote extends StatefulWidget {
   const Quote({super.key});
