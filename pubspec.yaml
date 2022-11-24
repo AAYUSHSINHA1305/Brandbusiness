@@ -44,6 +44,8 @@ dependencies:
   font_awesome_flutter: ^10.2.1
   http: ^0.13.5
   http_auth: ^1.0.1
+  flutter_paypal: ^0.0.8  
+  shared_preferences: ^2.0.15
   # flutter_braintree: ^2.3.1
   
 

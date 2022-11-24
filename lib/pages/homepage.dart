@@ -1,9 +1,12 @@
+import 'package:brandbusiness/pages/pay_now.dart';
 import 'package:brandbusiness/pages/quote.dart';
 import 'package:brandbusiness/pages/web_application.dart';
 import 'package:brandbusiness/services/launch.dart';
+import 'package:brandbusiness/services/paypal_service.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_paypal/flutter_paypal.dart';
 import 'package:get/get.dart';
 // import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -1097,87 +1100,22 @@ class _HomepageState extends State<Homepage> {
                               SizedBox(
                                 height: 20,
                               ),
-                              // ElevatedButton(
-                              //   onPressed: () async {
-                              //     var request = BraintreeDropInRequest(
-                              //       tokenizationKey: tokenizationKey,
-                              //       collectDeviceData: true,
-                              //       googlePaymentRequest:
-                              //           BraintreeGooglePaymentRequest(
-                              //         totalPrice: '',
-                              //         currencyCode: '',
-                              //         billingAddressRequired: false,
-                              //       ),
-                              //       paypalRequest: BraintreePayPalRequest(
-                              //         amount: '',
-                              //         displayName: '',
-                              //       ),
-                              //       cardEnabled: true,
-                              //     );
-                              //     final result =
-                              //         await BraintreeDropIn.start(request);
-                              //     if (result != null) {
-                              //       showNonce(result.paymentMethodNonce);
-                              //     }
-                              //   },
-                              //   child: Text('LAUNCH NATIVE DROP-IN'),
-                              // ),
-                              // ElevatedButton(
-                              //   onPressed: () async {
-                              //     final Request = BraintreeCreditCardRequest(
-                              //         cardNumber: '',
-                              //         expirationMonth: '',
-                              //         expirationYear: '',
-                              //         cvv: '');
-                              //     final result =
-                              //         await Braintree.tokenizeCreditCard(
-                              //             tokenizationKey, request);
-
-                              //     if (result != null) {
-                              //       showNonce(result);
-                              //     }
-                              //   },
-                              //   child: Text('TOKENIZE CREDIT CARD'),
-                              // ),
-                              // ElevatedButton(
-                              //   onPressed: () async {
-                              //     final request = BraintreePayPalRequest(
-                              //       billingAgreementDescription:
-                              //           'I hereby agree that flutter_braintree is great.',
-                              //       displayName: 'Your Company',
-                              //     );
-                              //     final result =
-                              //         await Braintree.requestPaypalNonce(
-                              //       tokenizationKey,
-                              //       request,
-                              //     );
-                              //     if (result != null) {
-                              //       showNonce(result);
-                              //     }
-                              //   },
-                              //   child: Text('PAYPAL VAULT FLOW'),
-                              // ),
-                              // ElevatedButton(
-                              //   onPressed: () async {
-                              //     final request = BraintreePayPalRequest(
-                              //       amount: "",
-                              //     );
-                              //     final result =
-                              //         await Braintree.requestPaypalNonce(
-                              //       tokenizationKey,
-                              //       request,
-                              //     );
-                              //     if (result != null) {
-                              //       showNonce(result);
-                              //     }
-                              //   },
-                              //   child: Text('PAYPAL CHECKOUT FLOW'),
-                              // ),
+                              // Payment Button
+                              MaterialButton(
+                                onPressed: () {
+                                  //proceed with payment
+                                },
+                                child: Text("Continue to Pay"),
+                              ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 15,
                                 ),
-                                child: Image.asset("assets/payment.png"),
+                                child: GestureDetector(
+                                    onTap: () {
+                                      makePayment();
+                                    },
+                                    child: Image.asset("assets/payment.png")),
                               ),
                               SizedBox(
                                 height: 10,
@@ -1682,5 +1620,62 @@ class _HomepageState extends State<Homepage> {
         ),
       );
     }
+  }
+
+  makePayment() async {
+    debugPrint("make payment");
+    PaypalServices paypal = PaypalServices();
+    dynamic access_token = await paypal.getAccessToken();
+    if (access_token != null) {
+      dynamic transactions = [
+        {
+          "amount": "100",
+          "name": "Sample name",
+          "currency": "INR",
+          "product_name": "",
+          "description": "Payment from Webmaniacs Application"
+        }
+      ];
+      paypal.createPaypalPayment(transactions, access_token);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Payment Error"),
+      ));
+    }
+
+    // Navigator.push(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (_) => UsePaypal(
+    //         sandboxMode: true,
+    //         clientId:
+    //             "ATKUmk-J-qE_sPY4Gg0OI4ONEHQGTq8MHyuvqeEWODZARnD69BEvfqedemQnYhut3Nfcnbflhb5qmo8c",
+    //         secretKey:
+    //             "EJEvIXhfLIeuy3WnYHiXmbn2s_l9fzSgTEgS54KPeLxwtA3oJwnIJRcQ1KsRwS-03IuEodB-76TNPsQu",
+    //         returnURL: "https://webmaniacs.co.nz/pay-now/",
+    //         cancelURL: "https://webmaniacs.co.nz/pay-now/",
+    //         onCancel: () {
+    //           ScaffoldMessenger.of(context)
+    //               .showSnackBar(SnackBar(content: Text("Payment Cancelled")));
+    //         },
+    //         onError: () {
+    //           ScaffoldMessenger.of(context)
+    //               .showSnackBar(SnackBar(content: Text("Payment Error")));
+    //         },
+    //         onSuccess: () {
+    //           ScaffoldMessenger.of(context)
+    //               .showSnackBar(SnackBar(content: Text("Payment Successfull")));
+    //         },
+    //         transactions: [
+    //           {
+    //             "amount": "100",
+    //             "name": "Sample name",
+    //             "currency": "INR",
+    //             "product_name": "",
+    //             "description": "Payment from Webmaniacs Application"
+    //           }
+    //         ],
+    //       ),
+    //     ));
   }
 }
