@@ -4,8 +4,12 @@ import 'dart:convert' as convert;
 import 'package:http_auth/http_auth.dart';
 
 class PaypalServices {
-  String domain = "https://api.sandbox.paypal.com"; // for sandbox mode
-//  String domain = "https://api.paypal.com"; // for production mode
+  // Get the login credentials of paypal dashboard
+  // Api request & all are done
+  // We just need to check the url & keys
+
+  String domain = "https://api-m.sandbox.paypal.com"; // for sandbox mode
+  // String domain = "https://api.paypal.com"; // for production mode
 
   // change clientId and secret with your own, provided by paypal
   String clientId =
@@ -15,12 +19,30 @@ class PaypalServices {
 
   // for getting the access token from Paypal
   Future<dynamic> getAccessToken() async {
+    print("getAccessToken");
     try {
-      var client = BasicAuthClient(clientId, secret);
-      var response = await client
-          .post('$domain/v1/oauth2/token?grant_type=client_credentials' as Uri);
+      // Api Request
+      var headers = {
+        'Authorization':
+            'Basic QVRLVW1rLUotcUVfc1BZNEdnME9JNE9ORUhRR1RxOE1IeXV2cWVFV09EWkFSbkQ2OUJFdmZxZWRlbVFuWWh1dDNOZmNuYmZsaGI1cW1vOGM6RUpFdklYaGZMSWV1eTNXbllIaVhtYm4yc19sOWZ6U2dURWdTNTRLUGVMeHd0QTNvSnduSUpSY1ExS3NSd1MtMDNJdUVvZEItNzZUTlBzUXU=',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      };
+      var request = http.Request(
+          'POST', Uri.parse('https://api.paypal.com/v1/oauth2/token'));
+      request.bodyFields = {'grant_type': 'client_credentials'};
+      request.headers.addAll(headers);
+
+      http.StreamedResponse response = await request.send();
+      // checking status code
+      print("Response status code : ${response.statusCode}");
       if (response.statusCode == 200) {
-        final body = convert.jsonDecode(response.body);
+        print(await response.stream.bytesToString());
+      } else {
+        print(response.reasonPhrase);
+      }
+      if (response.statusCode == 200) {
+        final body =
+            convert.jsonDecode(response.stream.bytesToString().toString());
         return body["access_token"];
       }
       return null;
@@ -33,7 +55,7 @@ class PaypalServices {
   Future<Map<String, String>?> createPaypalPayment(
       transactions, accessToken) async {
     try {
-      var response = await http.post("$domain/v1/payments/payment" as Uri,
+      var response = await http.post("$domain/v2/payments/payment" as Uri,
           body: convert.jsonEncode(transactions),
           headers: {
             "content-type": "application/json",

@@ -1,4 +1,5 @@
 import 'package:brandbusiness/pages/homepage.dart';
+import 'package:brandbusiness/pages/sample.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      home: Sample(),
     );
   }
 }

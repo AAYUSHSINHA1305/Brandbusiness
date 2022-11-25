@@ -1113,7 +1113,11 @@ class _HomepageState extends State<Homepage> {
                                 ),
                                 child: GestureDetector(
                                     onTap: () {
-                                      makePayment();
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => PayNow()));
+                                      // makePayment();
                                     },
                                     child: Image.asset("assets/payment.png")),
                               ),
@@ -1627,55 +1631,21 @@ class _HomepageState extends State<Homepage> {
     PaypalServices paypal = PaypalServices();
     dynamic access_token = await paypal.getAccessToken();
     if (access_token != null) {
-      dynamic transactions = [
-        {
-          "amount": "100",
-          "name": "Sample name",
-          "currency": "INR",
-          "product_name": "",
-          "description": "Payment from Webmaniacs Application"
-        }
-      ];
-      paypal.createPaypalPayment(transactions, access_token);
+      print(access_token);
+      // dynamic transactions = [
+      //   {
+      //     "amount": "100",
+      //     "name": "Sample name",
+      //     "currency": "INR",
+      //     "product_name": "",
+      //     "description": "Payment from Webmaniacs Application"
+      //   }
+      // ];
+      // paypal.createPaypalPayment(transactions, access_token);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text("Payment Error"),
       ));
     }
-
-    // Navigator.push(
-    //     context,
-    //     MaterialPageRoute(
-    //       builder: (_) => UsePaypal(
-    //         sandboxMode: true,
-    //         clientId:
-    //             "ATKUmk-J-qE_sPY4Gg0OI4ONEHQGTq8MHyuvqeEWODZARnD69BEvfqedemQnYhut3Nfcnbflhb5qmo8c",
-    //         secretKey:
-    //             "EJEvIXhfLIeuy3WnYHiXmbn2s_l9fzSgTEgS54KPeLxwtA3oJwnIJRcQ1KsRwS-03IuEodB-76TNPsQu",
-    //         returnURL: "https://webmaniacs.co.nz/pay-now/",
-    //         cancelURL: "https://webmaniacs.co.nz/pay-now/",
-    //         onCancel: () {
-    //           ScaffoldMessenger.of(context)
-    //               .showSnackBar(SnackBar(content: Text("Payment Cancelled")));
-    //         },
-    //         onError: () {
-    //           ScaffoldMessenger.of(context)
-    //               .showSnackBar(SnackBar(content: Text("Payment Error")));
-    //         },
-    //         onSuccess: () {
-    //           ScaffoldMessenger.of(context)
-    //               .showSnackBar(SnackBar(content: Text("Payment Successfull")));
-    //         },
-    //         transactions: [
-    //           {
-    //             "amount": "100",
-    //             "name": "Sample name",
-    //             "currency": "INR",
-    //             "product_name": "",
-    //             "description": "Payment from Webmaniacs Application"
-    //           }
-    //         ],
-    //       ),
-    //     ));
   }
 }

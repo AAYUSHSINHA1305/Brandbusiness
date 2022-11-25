@@ -10,51 +10,56 @@ class PayNow extends StatefulWidget {
 }
 
 class _PayNowState extends State<PayNow> {
+  List<String> item = [
+    '',
+    '',
+    '',
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      body: Column(
-        children: [
-          Drawer(
-              child: ListView(
-            children: [
-              Column(
-                children: [
-                  MaterialButton(
-                    onPressed: () {},
-                    child: Text("Home"),
-                  ),
-                  ExpansionTile(
-                      title: Column(
-                    children: [
-                      Text('Company'),
-                      Text('About Us'),
-                    ],
-                  )),
-                  ExpansionTile(
-                      title: Column(
-                    children: [
-                      Text('Product & Services'),
-                      Text('Website Designing'),
-                      Text('Web Devlopment'),
-                      Text('Android & ios Devlopment'),
-                    ],
-                  )),
-
-                ],
-              )
-            ],
-          )),
-          Image.asset("assets/icon-3.png"),
-          Stack(
-            children: [
-              Image.asset("assets/about_us_banner.jpg"),
-              Text("Pay Now"),
-            ],
-          )
-        ],
+      child: Scaffold(
+        body: Column(
+          children: [
+            Drawer(
+                child: ListView(
+              children: [
+                Column(
+                  children: [
+                    MaterialButton(
+                      onPressed: () {},
+                      child: Text("Home"),
+                    ),
+                    ExpansionTile(
+                        title: Column(
+                      children: [
+                        Text('Company'),
+                        Text('About Us'),
+                      ],
+                    )),
+                    ExpansionTile(
+                        title: Column(
+                      children: [
+                        Text('Product & Services'),
+                        Text('Website Designing'),
+                        Text('Web Devlopment'),
+                        Text('Android & ios Devlopment'),
+                      ],
+                    )),
+                  ],
+                )
+              ],
+            )),
+            Image.asset("assets/icon-3.png"),
+            Stack(
+              children: [
+                Image.asset("assets/about_us_banner.jpg"),
+                Text("Pay Now"),
+              ],
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
