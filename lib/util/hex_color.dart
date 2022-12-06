@@ -10,3 +10,4 @@ const circleAvcolr = Color(0xff005195);
 const expantcol = Color(0xffff7600);
 const greencol = Color(0xff8ab13d);
 const bluedeepcol = Color(0xff051441);
+const bodercolor = Color(0xffdbdbdb);

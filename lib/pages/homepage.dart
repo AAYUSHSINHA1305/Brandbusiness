@@ -52,13 +52,7 @@ class _HomepageState extends State<Homepage> {
   bool mediamarketing = false;
   int activeIndex = 0;
 
-  int get contactNo => 64227000067;
-
-  get countryCode => null;
-
-  get attachments => null;
-
-  get isHTML => null;
+//64227000067
 
 // method to launch a url
   Future<void> launch_url(String _url) async {
