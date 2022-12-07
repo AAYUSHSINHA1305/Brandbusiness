@@ -18,9 +18,9 @@ class PaypalPayment extends StatefulWidget {
 
 class PaypalPaymentState extends State<PaypalPayment> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  late String checkoutUrl;
-  late String executeUrl;
-  late String accessToken;
+  String checkoutUrl = "";
+  String executeUrl = "";
+  String accessToken = "";
   PaypalServices services = PaypalServices();
 
   // you can change default currency according to your need
@@ -156,10 +156,12 @@ class PaypalPaymentState extends State<PaypalPayment> {
               final payerID = uri.queryParameters['PayerID'];
               if (payerID != null) {
                 services
-                    .executePayment(executeUrl, payerID, accessToken)
+                    .executePayment(Uri.parse(executeUrl), payerID, accessToken)
                     .then((id) {
                   widget.onFinish(id);
                   Navigator.of(context).pop();
+                }).onError((error, stackTrace) {
+                  debugPrint(error.toString());
                 });
               } else {
                 Navigator.of(context).pop();

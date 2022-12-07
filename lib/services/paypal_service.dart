@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert' as convert;
@@ -8,7 +12,7 @@ class PaypalServices {
   // Api request & all are done
   // We just need to check the url & keys
 
-  String domain = "https://api-m.sandbox.paypal.com"; // for sandbox mode
+  String domain = "https://api.sandbox.paypal.com"; // for sandbox mode
   // String domain = "https://api.paypal.com"; // for production mode
 
   // change clientId and secret with your own, provided by paypal
@@ -21,69 +25,79 @@ class PaypalServices {
   Future<dynamic> getAccessToken() async {
     print("getAccessToken");
     try {
-      // Api Request
-      var headers = {
-        'Authorization':
-            'Basic QVRLVW1rLUotcUVfc1BZNEdnME9JNE9ORUhRR1RxOE1IeXV2cWVFV09EWkFSbkQ2OUJFdmZxZWRlbVFuWWh1dDNOZmNuYmZsaGI1cW1vOGM6RUpFdklYaGZMSWV1eTNXbllIaVhtYm4yc19sOWZ6U2dURWdTNTRLUGVMeHd0QTNvSnduSUpSY1ExS3NSd1MtMDNJdUVvZEItNzZUTlBzUXU=',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      };
-      var request = http.Request(
-          'POST', Uri.parse('https://api.paypal.com/v1/oauth2/token'));
-      request.bodyFields = {'grant_type': 'client_credentials'};
-      request.headers.addAll(headers);
-
-      http.StreamedResponse response = await request.send();
-      // checking status code
-      print("Response status code : ${response.statusCode}");
+      var client = BasicAuthClient(clientId, secret);
+      http.Response response = await client.post(
+          Uri.parse('$domain/v1/oauth2/token?grant_type=client_credentials'));
+      print(response.statusCode);
+      print(response.body);
       if (response.statusCode == 200) {
-        print(await response.stream.bytesToString());
-      } else {
-        print(response.reasonPhrase);
-      }
-      if (response.statusCode == 200) {
-        final body =
-            convert.jsonDecode(response.stream.bytesToString().toString());
+        final body = convert.jsonDecode(response.body);
         return body["access_token"];
       }
       return null;
     } catch (e) {
-      return null;
+      rethrow;
     }
   }
 
   // for creating the payment request with Paypal
   Future<Map<String, String>?> createPaypalPayment(
       transactions, accessToken) async {
+    debugPrint("Create Paypal Payment");
     try {
-      var response = await http.post("$domain/v2/payments/payment" as Uri,
-          body: convert.jsonEncode(transactions),
-          headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer ' + accessToken
-          });
-
-      final body = convert.jsonDecode(response.body);
-      if (response.statusCode == 201) {
-        if (body["links"] != null && body["links"].length > 0) {
-          List links = body["links"];
-
-          String executeUrl = "";
-          String approvalUrl = "";
-          final item = links.firstWhere((o) => o["rel"] == "approval_url",
-              orElse: () => null);
-          if (item != null) {
-            approvalUrl = item["href"];
+      var headers = {
+        'Content-Type': 'application/json',
+        'Prefer': 'return=representation',
+        'PayPal-Request-Id': '835496ce-7761-4cd2-ae6a-372ca5254391',
+        'Authorization': 'Bearer $accessToken'
+      };
+      var request = http.Request('POST',
+          Uri.parse('https://api-m.sandbox.paypal.com/v2/checkout/orders'));
+      request.body = json.encode({
+        "intent": "CAPTURE",
+        "purchase_units": [
+          {
+            "items": [
+              {
+                "name": "T-Shirt",
+                "description": "Green XL",
+                "quantity": "1",
+                "unit_amount": {"currency_code": "USD", "value": "100.00"}
+              }
+            ],
+            "amount": {
+              "currency_code": "USD",
+              "value": "100.00",
+              "breakdown": {
+                "item_total": {"currency_code": "USD", "value": "100.00"}
+              }
+            }
           }
-          final item1 = links.firstWhere((o) => o["rel"] == "execute",
-              orElse: () => null);
-          if (item1 != null) {
-            executeUrl = item1["href"];
-          }
-          return {"executeUrl": executeUrl, "approvalUrl": approvalUrl};
+        ],
+        "application_context": {
+          "return_url": "https://example.com/return",
+          "cancel_url": "https://example.com/cancel"
         }
-        return null;
+      });
+      request.headers.addAll(headers);
+
+      http.StreamedResponse response = await request.send();
+
+      if (response.statusCode == 200) {
+        print(await response.stream.bytesToString());
+        // show Order Details
+        
+        // store the order id 
+
+
+
+
+        // Authorize Payment for Order
+        // Capture Payment for Order 
+        // Confirm the Order
+
       } else {
-        throw Exception(body["message"]);
+        print(response.reasonPhrase);
       }
     } catch (e) {
       rethrow;
@@ -92,6 +106,7 @@ class PaypalServices {
 
   // for executing the payment transaction
   Future<String?> executePayment(url, payerId, accessToken) async {
+    debugPrint("Execute payment........");
     try {
       var response = await http.post(url,
           body: convert.jsonEncode({"payer_id": payerId}),
@@ -99,7 +114,7 @@ class PaypalServices {
             "content-type": "application/json",
             'Authorization': 'Bearer ' + accessToken
           });
-
+      debugPrint(response.body);
       final body = convert.jsonDecode(response.body);
       if (response.statusCode == 200) {
         return body["id"];

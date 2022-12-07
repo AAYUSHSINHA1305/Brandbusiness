@@ -1,4 +1,5 @@
 import 'package:brandbusiness/pages/pay_now.dart';
+import 'package:brandbusiness/pages/paypal_payment.dart';
 import 'package:brandbusiness/services/launch.dart';
 import 'package:brandbusiness/services/paypal_service.dart';
 import 'package:brandbusiness/util/hex_color.dart';
@@ -201,7 +202,13 @@ class _SampleState extends State<Sample> {
                     padding: const EdgeInsets.only(right: 10),
                     child: MaterialButton(
                       color: blueclor,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    PaypalPayment(onFinish: () {})));
+                      },
                       child: Text(
                         'Submit',
                         style: TextStyle(
