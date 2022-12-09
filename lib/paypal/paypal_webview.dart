@@ -1,9 +1,10 @@
+import 'package:brandbusiness/paypal/services.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class PaypalWebview extends StatefulWidget {
-  const PaypalWebview({super.key});
+  final String initialUrl;
+  const PaypalWebview({super.key, required this.initialUrl});
 
   @override
   State<PaypalWebview> createState() => _PaypalWebviewState();
@@ -25,6 +26,12 @@ class _PaypalWebviewState extends State<PaypalWebview> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+        // authorize Order
+        // PaypalServices().authorizeOrder(
+        // accessToken: widget.AccessToken,
+        // context: context,
+        // orderId: widget.OrderId,
+        // webViewController: _webViewController);
         _webViewController.goBack();
         return Future.value(false);
       },
@@ -38,7 +45,7 @@ class _PaypalWebviewState extends State<PaypalWebview> {
           onWebViewCreated: (WebViewController webViewController) {
             _webViewController = webViewController;
           },
-          initialUrl: AppConstants.url,
+          initialUrl: "${widget.initialUrl}",
           javascriptMode: JavascriptMode.unrestricted,
           onProgress: (int progress) {
             print("WebView is loading (progress : $progress%)");
@@ -52,6 +59,7 @@ class _PaypalWebviewState extends State<PaypalWebview> {
           },
           onPageStarted: (String url) {
             print('Page started loading: $url');
+            // debugPrint("===============  Approve Order  ====================");
           },
           onPageFinished: (String url) {
             print('Page finished loading: $url');

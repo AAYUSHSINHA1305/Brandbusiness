@@ -1,18 +1,15 @@
 import 'package:brandbusiness/pages/pay_now.dart';
 import 'package:brandbusiness/pages/quote.dart';
 import 'package:brandbusiness/pages/web_application.dart';
+import 'package:brandbusiness/paypal/paypal_webview.dart';
 import 'package:brandbusiness/services/launch.dart';
-import 'package:brandbusiness/services/paypal_service.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_paypal/flutter_paypal.dart';
 import 'package:get/get.dart';
-// import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:flutter_braintree/flutter_braintree.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -22,29 +19,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  // static final String tokenizationKey = 'sandbox_8hxpnkht_kzdtzv2btm4p7s5j';
-
-  // BraintreeCreditCardRequest get request => request;
-  // void showNonce(BraintreePaymentMethodNonce nonce) {
-  //   showDialog(
-  //     context: context,
-  //     builder: (_) => AlertDialog(
-  //       title: Text('Payment method nonce:'),
-  //       content: Column(
-  //         mainAxisSize: MainAxisSize.min,
-  //         crossAxisAlignment: CrossAxisAlignment.stretch,
-  //         children: <Widget>[
-  //           Text('Nonce: ${nonce.nonce}'),
-  //           SizedBox(height: 16),
-  //           Text('Type label: ${nonce.typeLabel}'),
-  //           SizedBox(height: 16),
-  //           Text('Description: ${nonce.description}'),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
-
   bool businessconsuliting = false;
   bool businessanalytics = false;
   bool marketingresarch = false;
@@ -948,7 +922,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         Image.asset(
                           'assets/footbg.jpg',
-                          height: size.height * 1.5,
+                          height: size.height * 1.7,
                           fit: BoxFit.cover,
                         ),
                         Padding(
@@ -1110,8 +1084,9 @@ class _HomepageState extends State<Homepage> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => PayNow()));
-                                      // makePayment();
+                                              builder: (context) => PaypalWebview(
+                                                  initialUrl:
+                                                      "https://webmaniacs.co.nz/pay-now/")));
                                     },
                                     child: Image.asset("assets/payment.png")),
                               ),
@@ -1617,29 +1592,6 @@ class _HomepageState extends State<Homepage> {
           content: Text("WhatsApp is not installed on the device"),
         ),
       );
-    }
-  }
-
-  makePayment() async {
-    debugPrint("make payment");
-    PaypalServices paypal = PaypalServices();
-    dynamic access_token = await paypal.getAccessToken();
-    if (access_token != null) {
-      print(access_token);
-      // dynamic transactions = [
-      //   {
-      //     "amount": "100",
-      //     "name": "Sample name",
-      //     "currency": "INR",
-      //     "product_name": "",
-      //     "description": "Payment from Webmaniacs Application"
-      //   }
-      // ];
-      // paypal.createPaypalPayment(transactions, access_token);
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Payment Error"),
-      ));
     }
   }
 }

@@ -1,15 +1,12 @@
 import 'package:brandbusiness/pages/pay_now.dart';
-import 'package:brandbusiness/pages/paypal_payment.dart';
 import 'package:brandbusiness/services/launch.dart';
 // import 'package:brandbusiness/services/paypal_service.dart';
 import 'package:brandbusiness/util/hex_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:brandbusiness/paypal/services.dart';
+import 'package:brandbusiness/paypal/paypal_webview.dart';
 
 class Sample extends StatefulWidget {
   const Sample({super.key});
@@ -262,12 +259,33 @@ class _SampleState extends State<Sample> {
                         padding: const EdgeInsets.only(right: 10),
                         child: MaterialButton(
                           color: blueclor,
-                          onPressed: () {
-                            PaypalServices().getAuthToken();
+                          onPressed: () async {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ));
+                                    builder: (context) => PaypalWebview(
+                                          initialUrl:
+                                              "https://webmaniacs.co.nz/pay-now/",
+                                        )));
+                            // var accessToken =
+                            //     await PaypalServices().getAuthToken();
+                            // if (accessToken != null) {
+                            //   var OrderId = await PaypalServices()
+                            //       .createOrder(accessToken.toString());
+                            //   if (OrderId != null) {
+                            //     // attach webview
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) => PaypalWebview(
+                            //                   AccessToken: accessToken,
+                            //                   OrderId: OrderId,
+                            //                   initialUrl:
+                            //                       "https://www.sandbox.paypal.com/checkoutnow?token=$OrderId",
+                            //                 )));
+                            //     // PaypalServices().capturePaymentForOrder();
+                            //   }
+                            // }
                           },
                           child: Text(
                             'Submit',

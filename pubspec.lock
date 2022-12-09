@@ -126,22 +126,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
-  flutter_paypal:
-    dependency: "direct main"
-    description:
-      name: flutter_paypal
-      sha256: ac5eb284a507751db27e134d08b149e79f646ce3abcd8115977f2d94f0c4e93b
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.8"
-  flutter_spinkit:
-    dependency: transitive
-    description:
-      name: flutter_spinkit
-      sha256: "77a2117c0517ff909221f3160b8eb20052ab5216107581168af574ac1f05dff8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.1.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -296,6 +280,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  random_string_generator:
+    dependency: "direct main"
+    description:
+      name: random_string_generator
+      sha256: "3d2d866b48fc4cf568cb335ecb96a299bce1d00e165a688ba04d31724b2c10e2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -502,13 +494,13 @@ packages:
     source: hosted
     version: "2.1.4"
   webview_flutter:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: webview_flutter
-      sha256: "6886b3ceef1541109df5001054aade5ee3c36b5780302e41701c78357233721c"
+      sha256: "392c1d83b70fe2495de3ea2c84531268d5b8de2de3f01086a53334d8b6030a88"
       url: "https://pub.dev"
     source: hosted
-    version: "2.8.0"
+    version: "3.0.4"
   webview_flutter_android:
     dependency: transitive
     description:
@@ -549,6 +541,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.0+2"
+  xid:
+    dependency: "direct main"
+    description:
+      name: xid
+      sha256: "7ade0e857bac6f17337a41e37e399c13291c0b721634d7f5637d21c1ae6f3ecd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.12"
 sdks:
   dart: ">=2.18.0 <3.0.5"
   flutter: ">=3.0.0"
